@@ -40,6 +40,7 @@ import {
   type Language,
 } from './data/cases'
 import { getDashboardMetrics, type DashboardMetrics } from './data/dashboardMetrics'
+import { loadRegistry, type RegistryPayload } from './data/registry'
 
 type TabKey = 'dashboard' | 'cases' | 'timeline' | 'charts'
 const ALL = '__all__'
@@ -309,6 +310,7 @@ function App() {
   const [platform, setPlatform] = useState<string>(ALL)
   const [article, setArticle] = useState<string>(ALL)
   const [updates, setUpdates] = useState<UpdatesData | null>(null)
+  const [registry, setRegistry] = useState<RegistryPayload | null>(null)
   const copy = UI[language]
 
   useEffect(() => {
@@ -320,7 +322,11 @@ function App() {
     fetch(`${import.meta.env.BASE_URL}data/updates.json`).then((response) => response.ok ? response.json() as Promise<UpdatesData> : null).then(setUpdates).catch(() => setUpdates(null))
   }, [])
 
-  const register = useMemo(() => dedupeCases(cases), [])
+  useEffect(() => {
+    loadRegistry(import.meta.env.BASE_URL).then(setRegistry).catch(() => setRegistry(null))
+  }, [])
+
+  const register = useMemo(() => dedupeCases(registry?.enforcement_cases ?? cases), [registry])
   const platforms = useMemo(() => [...new Set(register.flatMap((item) => item.platforms))], [register])
   const articles = useMemo(() => [...new Set(register.flatMap((item) => item.articles))], [register])
   const filtered = useMemo(() => register.filter((item) => (category === ALL || item.category === category) && (platform === ALL || item.platforms.includes(platform)) && (article === ALL || item.articles.includes(article))), [article, category, platform, register])
