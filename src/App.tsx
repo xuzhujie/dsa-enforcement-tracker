@@ -19,9 +19,11 @@ import {
   LineChart,
   ListFilter,
   RefreshCw,
+  Search,
   Scale,
   SearchCheck,
   ShieldCheck,
+  X,
 } from 'lucide-react'
 import {
   CATEGORY_META,
@@ -40,6 +42,7 @@ import {
   type Language,
 } from './data/cases'
 import { getDashboardMetrics, type DashboardMetrics } from './data/dashboardMetrics'
+import { exportCalendarIcs, exportCsv, exportJson, exportMarkdown, searchCases } from './data/exports'
 import { loadRegistry, type RegistryPayload } from './data/registry'
 
 type TabKey = 'dashboard' | 'cases' | 'timeline' | 'charts'
@@ -56,6 +59,15 @@ const UI = {
     allTypes: '全部类型',
     allPlatforms: '全部平台',
     allArticles: '全部条款',
+    search: '搜索',
+    searchPlaceholder: '搜索案件、主体、平台、条款…',
+    allCountries: '全部国家 / 地区',
+    allAuthorities: '全部主管机关',
+    allRisks: '全部风险',
+    allStages: '全部状态 / 阶段',
+    highRisk: '高风险',
+    mediumRisk: '中风险',
+    lowRisk: '低风险',
     clear: '清除筛选',
     dashboard: '驾驶舱',
     cases: '案件总览',
@@ -79,12 +91,16 @@ const UI = {
     exportMarkdown: 'Markdown',
     exportJson: 'JSON',
     exportCsv: 'CSV',
+    exportCalendar: '导出日历',
     fined: '已有罚款记录',
     notFined: '暂无罚款记录',
     rules: 'DSA 执法规则速览',
     sources: '官方数据来源',
     open: '展开详情',
     close: '收起详情',
+    viewCase: '打开完整案件',
+    detail: '案件详情',
+    designationDate: '指定日期',
     keyPoints: '案件要点',
     impact: '业务影响',
     status: '当前状态',
@@ -120,6 +136,15 @@ const UI = {
     allTypes: 'All types',
     allPlatforms: 'All platforms',
     allArticles: 'All articles',
+    search: 'Search',
+    searchPlaceholder: 'Search cases, entities, platforms, articles…',
+    allCountries: 'All countries / regions',
+    allAuthorities: 'All authorities',
+    allRisks: 'All risks',
+    allStages: 'All statuses / stages',
+    highRisk: 'High risk',
+    mediumRisk: 'Medium risk',
+    lowRisk: 'Low risk',
     clear: 'Clear filters',
     dashboard: 'Dashboard',
     cases: 'Case register',
@@ -143,12 +168,16 @@ const UI = {
     exportMarkdown: 'Markdown',
     exportJson: 'JSON',
     exportCsv: 'CSV',
+    exportCalendar: 'Calendar',
     fined: 'Fine recorded',
     notFined: 'No fine recorded',
     rules: 'DSA enforcement rules at a glance',
     sources: 'Official data sources',
     open: 'Open details',
     close: 'Hide details',
+    viewCase: 'Open full case',
+    detail: 'Case details',
+    designationDate: 'Designation date',
     keyPoints: 'Key points',
     impact: 'Business impact',
     status: 'Current status',
@@ -202,56 +231,6 @@ function triggerDownload(filename: string, content: string, mimeType: string) {
   window.setTimeout(() => URL.revokeObjectURL(url), 0)
 }
 
-function exportMarkdown(items: DsaCase[], language: Language): string {
-  const title = language === 'zh' ? '# DSA 执法追踪器导出' : '# DSA Enforcement Tracker export'
-  const intro = language === 'zh' ? `\n导出时间：${new Date().toISOString()}\n案件数：${items.length}\n` : `\nExported at: ${new Date().toISOString()}\nCases: ${items.length}\n`
-  const sections = items.map((item) => {
-    const heading = text(item.title, language)
-    const facts = language === 'zh'
-      ? [`- 案件 ID：${item.case_id}`, `- 主体：${text(item.entity, language)}`, `- 主管机关：${text(item.authority, language)}`, `- 当前状态：${text(item.status, language)}`, `- DSA 条款：${item.articles.join('、')}`, `- 风险等级：${item.risk_level}`, `- 首次日期：${item.first_date}`, `- 最新进展：${item.latest_date}`, `- 罚款：${item.fine == null ? '—' : formatFine(item.fine, language)}`, `- 下一步：${text(item.nextAction, language)}`, `- 来源：${item.source_url}`]
-      : [`- Case ID: ${item.case_id}`, `- Entity: ${text(item.entity, language)}`, `- Authority: ${text(item.authority, language)}`, `- Status: ${text(item.status, language)}`, `- DSA articles: ${item.articles.join(', ')}`, `- Risk level: ${item.risk_level}`, `- First date: ${item.first_date}`, `- Latest progress: ${item.latest_date}`, `- Fine: ${item.fine == null ? '—' : formatFine(item.fine, language)}`, `- Next action: ${text(item.nextAction, language)}`, `- Source: ${item.source_url}`]
-    return `\n## ${heading}\n\n${facts.join('\n')}\n\n${text(item.evidence_snapshot, language)}`
-  })
-  return `${title}${intro}${sections.join('\n')}`
-}
-
-function csvCell(value: string | number | null): string {
-  const textValue = value == null ? '' : String(value)
-  return `"${textValue.replaceAll('"', '""')}"`
-}
-
-function exportCsv(items: DsaCase[], language: Language): string {
-  const columns = ['case_id', 'title', 'entity', 'platforms', 'country', 'authority', 'designation', 'case_type', 'articles', 'first_date', 'latest_date', 'status', 'fine_eur_millions', 'risk_level', 'owner', 'next_action', 'deadline', 'source_url', 'source_type', 'evidence_snapshot', 'last_verified_at']
-  const rows = items.map((item) => [
-    item.case_id,
-    text(item.title, language),
-    text(item.entity, language),
-    item.platforms.join(' | '),
-    text(item.country, language),
-    text(item.authority, language),
-    item.designation,
-    item.case_type,
-    item.articles.join(' | '),
-    item.first_date,
-    item.latest_date,
-    text(item.status, language),
-    item.fine,
-    item.risk_level,
-    text(item.owner, language),
-    text(item.nextAction, language),
-    item.deadline ? text(item.deadline, language) : null,
-    item.source_url,
-    item.source_type.join(' | '),
-    text(item.evidence_snapshot, language),
-    item.last_verified_at,
-  ].map(csvCell).join(','))
-  return [columns.join(','), ...rows].join('\n') + '\n'
-}
-
-function exportJson(items: DsaCase[], language: Language): string {
-  return JSON.stringify({ exported_at: new Date().toISOString(), language, cases: items }, null, 2)
-}
-
 function getStoredLanguage(): Language {
   const stored = window.localStorage.getItem('dsa-tracker-language')
   return stored === 'en' ? 'en' : 'zh'
@@ -266,7 +245,7 @@ function StatCard({ label, value, note, icon: Icon, tone }: { label: string; val
   return <div className={`stat-card stat-${tone}`}><div className="stat-label"><span>{label}</span><Icon size={16} /></div><div className="stat-value">{value}</div><div className="stat-note">{note}</div></div>
 }
 
-function CaseCard({ item, language }: { item: DsaCase; language: Language }) {
+function CaseCard({ item, language, onOpenCase }: { item: DsaCase; language: Language; onOpenCase: (caseId: string) => void }) {
   const [expanded, setExpanded] = useState(false)
   const meta = CATEGORY_META[item.category]
   const riskLabel = item.risk_level === 'high' ? (language === 'zh' ? '高风险' : 'High risk') : item.risk_level === 'medium' ? (language === 'zh' ? '中风险' : 'Medium risk') : (language === 'zh' ? '低风险' : 'Low risk')
@@ -277,10 +256,16 @@ function CaseCard({ item, language }: { item: DsaCase; language: Language }) {
     {item.fine != null && <div className={`case-fine ${item.category === 'decision' ? 'case-fine-red' : 'case-fine-amber'}`}>{formatFine(item.fine, language)}<small>{language === 'zh' ? '罚款' : 'fine'}</small></div>}
     <p className="case-summary">{text(item.summary, language)}</p>
     <div className="case-facts"><span><CalendarDays size={14} /> {item.latestDate}</span>{item.deadline && <span className="deadline"><AlertTriangle size={14} /> {text(item.deadline, language)}</span>}</div>
-    <button className="details-toggle" onClick={() => setExpanded((value) => !value)}>{expanded ? UI[language].close : UI[language].open} <ChevronDown size={15} className={expanded ? 'rotated' : ''} /></button>
+    <div className="case-actions"><button className="details-toggle" onClick={() => setExpanded((value) => !value)}>{expanded ? UI[language].close : UI[language].open} <ChevronDown size={15} className={expanded ? 'rotated' : ''} /></button><button className="open-case-link" onClick={() => onOpenCase(item.case_id)}>{UI[language].viewCase} <ArrowUpRight size={14} /></button></div>
     {expanded && <div className="case-details"><div><strong>{UI[language].keyPoints}</strong><ul>{item.keyPoints.map((point, index) => <li key={index}>{text(point, language)}</li>)}</ul></div><div><strong>{UI[language].status}</strong><p>{text(item.status, language)}</p></div><div><strong>{UI[language].impact}</strong><p>{text(item.businessImpact, language)}</p></div><div><strong>{UI[language].evidence}</strong><p>{text(item.evidence_snapshot, language)}</p></div><div className="next-action"><strong>{UI[language].nextAction}</strong><p>{text(item.nextAction, language)} · {text(item.owner, language)}</p></div></div>}
     <div className="case-card-footer">{item.sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer"><ExternalLink size={13} /> {text(source.label, language)}</a>)}</div>
   </article>
+}
+
+function CaseDetailPanel({ item, language, onClose }: { item: DsaCase; language: Language; onClose: () => void }) {
+  const copy = UI[language]
+  const riskLabel = item.risk_level === 'high' ? copy.highRisk : item.risk_level === 'medium' ? copy.mediumRisk : copy.lowRisk
+  return <section className="case-detail-panel" id="case-detail"><div className="detail-heading"><div><span className="detail-kicker">{copy.detail} · {item.case_id}</span><h2>{text(item.title, language)}</h2><p>{text(item.entity, language)} · {text(item.authority, language)} · {text(item.country, language)}</p></div><button className="detail-close" onClick={onClose} aria-label={copy.close}><X size={18} /></button></div><div className="detail-badges"><span className={`case-badge ${CATEGORY_META[item.category].color}`}>{text(CATEGORY_META[item.category].label, language)}</span><span className="stage-pill">{text(item.stage, language)}</span><Designation value={item.designation} /><span className={`risk-pill risk-${item.risk_level}`}>{riskLabel}</span></div><div className="detail-facts-grid"><div><span>{copy.status}</span><strong>{text(item.status, language)}</strong></div><div><span>{language === 'zh' ? '首次日期' : 'First date'}</span><strong>{formatDate(item.first_date, language)}</strong></div><div><span>{language === 'zh' ? '最新进展' : 'Latest progress'}</span><strong>{formatDate(item.latest_date, language)}</strong></div><div><span>{language === 'zh' ? '罚款' : 'Fine'}</span><strong>{item.fine == null ? '—' : formatFine(item.fine, language)}</strong></div></div><div className="detail-columns"><div><h3>{copy.keyPoints}</h3><ul>{item.keyPoints.map((point, index) => <li key={index}>{text(point, language)}</li>)}</ul><h3>{language === 'zh' ? '核心事实' : 'Core facts'}</h3><p>{text(item.summary, language)}</p></div><div><h3>{copy.impact}</h3><p>{text(item.businessImpact, language)}</p><h3>{copy.evidence}</h3><p>{text(item.evidence_snapshot, language)}</p><div className="detail-next-action"><span>{copy.nextAction}</span><strong>{text(item.nextAction, language)}</strong><small>{text(item.owner, language)}{item.deadline ? ` · ${text(item.deadline, language)}` : ''}</small></div></div></div><div className="detail-events"><h3>{language === 'zh' ? '事件链' : 'Event chain'}</h3><div className="detail-event-list">{item.events.map((event, index) => <div className="detail-event" key={`${event.date}-${index}`}><span>{formatDate(event.date, language)}</span><strong>{text(event.label, language)}</strong><p>{text(event.description, language)}</p></div>)}</div></div><div className="detail-sources"><div><h3>{copy.source}</h3><p>{item.source_type.join(' · ')}</p></div><div className="detail-source-links">{item.sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer"><ExternalLink size={13} />{text(source.label, language)}</a>)}</div><small>{language === 'zh' ? '最后核验' : 'Last verified'} · {item.last_verified_at}</small></div></section>
 }
 
 function Timeline({ items, language }: { items: DsaCase[]; language: Language }) {
@@ -306,11 +291,25 @@ function DashboardOverview({ metrics, updates, language }: { metrics: DashboardM
 function App() {
   const [language, setLanguage] = useState<Language>(() => getStoredLanguage())
   const [tab, setTab] = useState<TabKey>('dashboard')
+  const [query, setQuery] = useState('')
   const [category, setCategory] = useState<CaseCategory | typeof ALL>(ALL)
   const [platform, setPlatform] = useState<string>(ALL)
   const [article, setArticle] = useState<string>(ALL)
+  const [country, setCountry] = useState<string>(ALL)
+  const [authority, setAuthority] = useState<string>(ALL)
+  const [risk, setRisk] = useState<DsaCase['risk_level'] | typeof ALL>(ALL)
+  const [statusFilter, setStatusFilter] = useState<string>(ALL)
   const [updates, setUpdates] = useState<UpdatesData | null>(null)
   const [registry, setRegistry] = useState<RegistryPayload | null>(null)
+  const [selectedCaseId, setSelectedCaseId] = useState<string | null>(() => {
+    const match = window.location.hash.match(/^#case\/(.+)$/)
+    if (!match) return null
+    try {
+      return decodeURIComponent(match[1])
+    } catch {
+      return null
+    }
+  })
   const copy = UI[language]
 
   useEffect(() => {
@@ -329,8 +328,31 @@ function App() {
   const register = useMemo(() => dedupeCases(registry?.enforcement_cases ?? cases), [registry])
   const platforms = useMemo(() => [...new Set(register.flatMap((item) => item.platforms))], [register])
   const articles = useMemo(() => [...new Set(register.flatMap((item) => item.articles))], [register])
-  const filtered = useMemo(() => register.filter((item) => (category === ALL || item.category === category) && (platform === ALL || item.platforms.includes(platform)) && (article === ALL || item.articles.includes(article))), [article, category, platform, register])
+  const countries = useMemo(() => [...new Map(register.map((item) => [item.country.en, item.country])).values()], [register])
+  const authorities = useMemo(() => [...new Map(register.map((item) => [item.authority.en, item.authority])).values()], [register])
+  const statuses = useMemo(() => [...new Map(register.map((item) => [item.stage.en, item.stage])).values()], [register])
+  const filtered = useMemo(() => searchCases(register, query).filter((item) => (category === ALL || item.category === category) && (platform === ALL || item.platforms.includes(platform)) && (article === ALL || item.articles.includes(article)) && (country === ALL || item.country.en === country) && (authority === ALL || item.authority.en === authority) && (risk === ALL || item.risk_level === risk) && (statusFilter === ALL || item.stage.en === statusFilter)), [article, authority, category, country, platform, query, register, risk, statusFilter])
   const metrics = useMemo(() => getDashboardMetrics(register), [register])
+  const calendar = registry?.calendar ?? calendarItems
+  const selectedCase = useMemo(() => register.find((item) => item.case_id === selectedCaseId) ?? null, [register, selectedCaseId])
+
+  useEffect(() => {
+    const syncHash = () => {
+      const match = window.location.hash.match(/^#case\/(.+)$/)
+      try {
+        setSelectedCaseId(match ? decodeURIComponent(match[1]) : null)
+      } catch {
+        setSelectedCaseId(null)
+      }
+    }
+    window.addEventListener('hashchange', syncHash)
+    window.addEventListener('popstate', syncHash)
+    syncHash()
+    return () => {
+      window.removeEventListener('hashchange', syncHash)
+      window.removeEventListener('popstate', syncHash)
+    }
+  }, [register])
 
   const stats = [
     { label: copy.fines, value: formatFine(metrics.fineTotal, language), note: language === 'zh' ? '不含尚未定案的程序' : 'Excludes unresolved proceedings', icon: Gavel, tone: 'red' as const },
@@ -339,12 +361,22 @@ function App() {
     { label: copy.finedEntities, value: `${metrics.finedEntityCount} ${language === 'zh' ? '个' : ''}`, note: language === 'zh' ? '案件主数据内已记录罚款' : 'With a fine in the case catalogue', icon: CheckCircle2, tone: 'green' as const },
   ]
 
-  const clearFilters = () => { setCategory(ALL); setPlatform(ALL); setArticle(ALL) }
-  const hasFilters = category !== ALL || platform !== ALL || article !== ALL
+  const clearFilters = () => { setQuery(''); setCategory(ALL); setPlatform(ALL); setArticle(ALL); setCountry(ALL); setAuthority(ALL); setRisk(ALL); setStatusFilter(ALL) }
+  const hasFilters = query !== '' || category !== ALL || platform !== ALL || article !== ALL || country !== ALL || authority !== ALL || risk !== ALL || statusFilter !== ALL
   const exportStamp = new Date().toISOString().slice(0, 10)
   const downloadMarkdown = () => triggerDownload(`dsa-enforcement-${exportStamp}.md`, exportMarkdown(filtered, language), 'text/markdown;charset=utf-8')
   const downloadJson = () => triggerDownload(`dsa-enforcement-${exportStamp}.json`, exportJson(filtered, language), 'application/json;charset=utf-8')
   const downloadCsv = () => triggerDownload(`dsa-enforcement-${exportStamp}.csv`, exportCsv(filtered, language), 'text/csv;charset=utf-8')
+  const downloadCalendar = () => triggerDownload(`dsa-enforcement-calendar-${exportStamp}.ics`, exportCalendarIcs(calendar, language), 'text/calendar;charset=utf-8')
+  const openCase = (caseId: string) => {
+    setSelectedCaseId(caseId)
+    window.history.pushState({}, '', `${window.location.pathname}${window.location.search}#case/${encodeURIComponent(caseId)}`)
+    window.setTimeout(() => document.getElementById('case-detail')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 0)
+  }
+  const closeCase = () => {
+    setSelectedCaseId(null)
+    window.history.pushState({}, '', `${window.location.pathname}${window.location.search}`)
+  }
 
   return <div className="app-shell">
     <header className="hero">
@@ -355,16 +387,17 @@ function App() {
       </div>
     </header>
     <main className="container main-container">
-      <div className="filter-bar"><div className="filter-label"><ListFilter size={16} /> {copy.filter}</div><div className="filter-group"><div className="segmented-filter">{([ALL, 'decision', 'proceeding', 'remedy', 'closed'] as const).map((key) => <button key={key} className={(category === key ? 'active ' : '') + 'filter-chip'} onClick={() => setCategory(key)}>{key === ALL ? copy.allTypes : text(CATEGORY_META[key].label, language)}</button>)}</div><select value={platform} onChange={(event) => setPlatform(event.target.value)}><option value={ALL}>{copy.allPlatforms}</option>{platforms.map((item) => <option key={item}>{item}</option>)}</select><select value={article} onChange={(event) => setArticle(event.target.value)}><option value={ALL}>{copy.allArticles}</option>{articles.map((item) => <option key={item}>{item}</option>)}</select>{hasFilters && <button className="clear-button" onClick={clearFilters}>{copy.clear}</button>}</div><div className="export-tools"><span><Download size={14} /> {copy.exportView}</span><button onClick={downloadMarkdown}>{copy.exportMarkdown}</button><button onClick={downloadJson}>{copy.exportJson}</button><button onClick={downloadCsv}>{copy.exportCsv}</button></div></div>
+      <div className="filter-bar"><div className="filter-label"><ListFilter size={16} /> {copy.filter}</div><div className="filter-group"><label className="search-field"><Search size={14} /><span className="sr-only">{copy.search}</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={copy.searchPlaceholder} /></label><div className="segmented-filter">{([ALL, 'decision', 'proceeding', 'remedy', 'closed'] as const).map((key) => <button key={key} className={(category === key ? 'active ' : '') + 'filter-chip'} onClick={() => setCategory(key)}>{key === ALL ? copy.allTypes : text(CATEGORY_META[key].label, language)}</button>)}</div><select value={platform} onChange={(event) => setPlatform(event.target.value)}><option value={ALL}>{copy.allPlatforms}</option>{platforms.map((item) => <option key={item}>{item}</option>)}</select><select value={article} onChange={(event) => setArticle(event.target.value)}><option value={ALL}>{copy.allArticles}</option>{articles.map((item) => <option key={item}>{item}</option>)}</select><select value={country} onChange={(event) => setCountry(event.target.value)}><option value={ALL}>{copy.allCountries}</option>{countries.map((item) => <option key={item.en} value={item.en}>{text(item, language)}</option>)}</select><select value={authority} onChange={(event) => setAuthority(event.target.value)}><option value={ALL}>{copy.allAuthorities}</option>{authorities.map((item) => <option key={item.en} value={item.en}>{text(item, language)}</option>)}</select><select value={risk} onChange={(event) => setRisk(event.target.value as DsaCase['risk_level'] | typeof ALL)}><option value={ALL}>{copy.allRisks}</option><option value="high">{copy.highRisk}</option><option value="medium">{copy.mediumRisk}</option><option value="low">{copy.lowRisk}</option></select><select value={statusFilter} onChange={(event) => setStatusFilter(event.target.value)}><option value={ALL}>{copy.allStages}</option>{statuses.map((item) => <option key={item.en} value={item.en}>{text(item, language)}</option>)}</select>{hasFilters && <button className="clear-button" onClick={clearFilters}>{copy.clear}</button>}</div><div className="export-tools"><span><Download size={14} /> {copy.exportView}</span><button onClick={downloadMarkdown}>{copy.exportMarkdown}</button><button onClick={downloadJson}>{copy.exportJson}</button><button onClick={downloadCsv}>{copy.exportCsv}</button></div></div>
       <div className="tabs" role="tablist">{([['dashboard', LayoutDashboard, copy.dashboard], ['cases', LayoutGrid, copy.cases], ['timeline', ShieldCheck, copy.timeline], ['charts', LineChart, copy.charts]] as const).map(([key, Icon, label]) => <button key={key} className={tab === key ? 'active' : ''} onClick={() => setTab(key as TabKey)}><Icon size={16} /> {label}</button>)}</div>
       {tab === 'dashboard' && <DashboardOverview metrics={metrics} updates={updates} language={language} />}
-      {tab === 'cases' && <section className="cases-section"><div className="section-title-row"><div><h2>{copy.cases}</h2><p>{filtered.length} / {register.length} {copy.casesCount}</p></div><FileText size={20} /></div>{filtered.length ? <div className="case-grid">{filtered.map((item) => <CaseCard item={item} language={language} key={item.id} />)}</div> : <p className="empty-state">{copy.noCases}</p>}</section>}
+      {selectedCase && <CaseDetailPanel item={selectedCase} language={language} onClose={closeCase} />}
+      {tab === 'cases' && <section className="cases-section"><div className="section-title-row"><div><h2>{copy.cases}</h2><p>{filtered.length} / {register.length} {copy.casesCount}</p></div><FileText size={20} /></div>{filtered.length ? <div className="case-grid">{filtered.map((item) => <CaseCard item={item} language={language} key={item.id} onOpenCase={openCase} />)}</div> : <p className="empty-state">{copy.noCases}</p>}</section>}
       {tab === 'timeline' && <section className="timeline-panel"><div className="section-title-row"><div><h2>{copy.timeline}</h2><p>{language === 'zh' ? '案件事件按最新官方节点倒序排列。' : 'Case events sorted by the latest official milestone.'}</p></div><Clock3 size={20} /></div><Timeline items={filtered} language={language} /></section>}
       {tab === 'charts' && <Charts metrics={metrics} language={language} />}
 
       <section className="updates-section"><div className="section-title-row"><div><h2>{copy.updates}</h2><p>{copy.updatesSub}</p></div><RefreshCw size={20} /></div><div className="updates-list">{updates?.items?.length ? updates.items.map((update) => <div className="update-item" key={update.link}><span>{update.date}</span><div><a href={update.link} target="_blank" rel="noreferrer">{language === 'zh' ? update.title_zh ?? update.title : update.title} <ExternalLink size={13} /></a><p>{language === 'zh' ? update.summary_zh ?? update.summary : update.summary}</p></div></div>) : <p className="empty-state">{copy.noUpdates}</p>}</div></section>
 
-      <section className="calendar-section"><div className="section-title-row"><div><h2>{copy.calendar}</h2><p>{copy.calendarSub}</p></div><CalendarDays size={20} /></div><div className="calendar-grid">{calendarItems.map((item) => <div className={`calendar-card calendar-${item.kind}`} key={`${item.date}-${item.title.en}`}><div className="calendar-date">{formatDate(item.date, language)}</div><strong>{text(item.title, language)}</strong><span>{text(item.owner, language)}</span><small>{text(item.status, language)}</small></div>)}</div></section>
+      <section className="calendar-section"><div className="section-title-row"><div><h2>{copy.calendar}</h2><p>{copy.calendarSub}</p></div><div className="section-actions"><button className="secondary-action" onClick={downloadCalendar}><Download size={14} /> {copy.exportCalendar}</button><CalendarDays size={20} /></div></div><div className="calendar-grid">{calendar.map((item) => <div className={`calendar-card calendar-${item.kind}`} key={`${item.date}-${item.title.en}`}><div className="calendar-date">{formatDate(item.date, language)}</div><strong>{text(item.title, language)}</strong><span>{text(item.owner, language)}</span><small>{text(item.status, language)}</small></div>)}</div></section>
 
       <section className="gatekeeper-section"><div className="section-title-row"><div><h2>{copy.designatedServices}</h2><p>{copy.designatedServicesSub}</p></div><Landmark size={20} /></div><div className="gatekeeper-grid">{designatedEntities.map((item) => <div className={`gatekeeper-card ${item.fined ? 'gatekeeper-fined' : ''}`} key={item.name}><div className="gatekeeper-name">{item.name}</div><div className="gatekeeper-meta"><span>{item.designation}</span><span>{text(item.dsc, language)}</span></div><div className="gatekeeper-status">{item.fined ? `${copy.fined}${item.fineTotal ? ` · ${formatFine(item.fineTotal, language)}` : ''}` : copy.notFined}</div></div>)}</div></section>
 

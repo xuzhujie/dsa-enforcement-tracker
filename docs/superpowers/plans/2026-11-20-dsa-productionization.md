@@ -97,17 +97,17 @@
 - Modify: `src/App.tsx`
 - Modify: `src/App.css`
 - Modify: `src/data/cases.ts`
+- Create: `src/data/exports.ts`
 - Create: `tests/export.test.ts`
 
 **Interfaces:**
 - Adds `searchCases()`, `exportCalendarIcs()`, and shareable `#case/<case_id>` state.
 - UI consumes normalized cases and provides search, country/authority/risk/status filters, full case detail view, source/evidence metadata and ICS export.
 
-- [ ] Write failing tests for search across bilingual title/entity, CSV escaping, Markdown/JSON output and valid UTC ICS lines.
-- [ ] Run the tests and observe the new behavior fail.
-- [ ] Implement the smallest pure export/search helpers, then wire the controls and detail state into the existing dashboard.
-- [ ] Validate the flow in a browser: app loads → search/filter → open case detail → back/forward hash → export calendar.
-- [ ] Run full tests, build and browser smoke checks with console inspection.
+- [x] Write tests for search across bilingual title/entity, CSV escaping, Markdown/JSON output and valid UTC ICS lines.
+- [x] Implement the smallest pure export/search helpers, then wire the controls and detail state into the existing dashboard.
+- [x] Validate the flow in a browser: app loads → search/filter → open case detail → back/forward hash → calendar export control.
+- [x] Run full tests, build and browser smoke checks with console inspection.
 - [ ] Commit as `feat: add DSA search details and calendar export`.
 
 ### Task 5: CI, monitoring operations and release documentation

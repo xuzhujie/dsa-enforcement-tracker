@@ -57,6 +57,7 @@ python scripts/check_updates.py
 ```text
 src/data/cases.ts          # 双语案件、主体、规则和官方来源登记簿
 src/data/registry.ts       # normalized registry contract, loader and validator
+src/data/exports.ts        # bilingual search and Markdown/JSON/CSV/ICS helpers
 src/data/dashboardMetrics.ts
 src/App.tsx                # 页面信息架构、筛选和双语切换
 public/data/registry.json  # 生成的案件/事件/条款/来源 registry
