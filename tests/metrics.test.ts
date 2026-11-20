@@ -6,10 +6,10 @@ import { getDashboardMetrics } from '../src/data/dashboardMetrics'
 test('DSA dashboard totals are derived from the case register', () => {
   const metrics = getDashboardMetrics(cases)
 
-  assert.equal(metrics.fineTotal, 120)
-  assert.equal(metrics.decisionCount, 1)
-  assert.equal(metrics.finedEntityCount, 1)
-  assert.equal(metrics.proceedingCount, 3)
+  assert.equal(metrics.fineTotal, 870)
+  assert.equal(metrics.decisionCount, 3)
+  assert.equal(metrics.finedEntityCount, 3)
+  assert.equal(metrics.proceedingCount, 5)
   assert.equal(metrics.remedyCount, 1)
   assert.equal(metrics.categoryCounts.reduce((sum, item) => sum + item.count, 0), cases.length)
 })

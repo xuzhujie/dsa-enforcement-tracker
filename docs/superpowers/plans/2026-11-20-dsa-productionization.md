@@ -84,11 +84,11 @@
 - Adds canonical, linked records for AliExpress, Temu, Booking.com, Meta addictive-design proceedings and current VLOP/VLOSE designation changes, without double-counting remedies as new matters.
 - Each added record includes bilingual title/summary, category, DSA articles, official URL, source type, evidence snapshot, first/latest date, risk level and owner/next action.
 
-- [ ] Write failing catalogue tests for minimum matter coverage, official-domain URLs, unique `case_id`, linked event dates and at least one decision, proceeding, remedy, RFI and DSC/CURIA record.
-- [ ] Run the catalogue test and observe missing records/URLs fail.
-- [ ] Add records and events from official Commission/DSC/CURIA sources, preserving canonical case IDs and separating case events from remediation workstreams.
-- [ ] Refresh the bilingual update feed with the newest official items and update the data-as-of marker.
-- [ ] Run catalogue tests, full tests and build.
+- [x] Write failing catalogue tests for minimum matter coverage, official-domain URLs, unique `case_id`, linked event dates and at least one decision, proceeding, remedy, RFI and DSC/CURIA record.
+- [x] Run the catalogue test and observe missing records/designations fail.
+- [x] Add records and events from official Commission/DSC/CURIA sources, preserving canonical case IDs and separating case events from remediation workstreams.
+- [x] Refresh the bilingual update feed with the newest official items and update the data-as-of marker.
+- [x] Run catalogue tests, full tests, registry export, validator and build.
 - [ ] Commit as `feat: expand official DSA case catalogue`.
 
 ### Task 4: Search, case detail workflow and calendar exports

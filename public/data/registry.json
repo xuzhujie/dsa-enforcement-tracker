@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-20T14:30:48.516Z",
-  "data_as_of": "2026-11-19",
+  "generated_at": "2026-11-20T14:42:18.409Z",
+  "data_as_of": "2026-11-20",
   "enforcement_cases": [
     {
       "id": "ec-meta-2024",
@@ -47,7 +47,7 @@
         "zh": "初步认定与正式程序官方页面，待逐项映射内部控制证据。",
         "en": "Official preliminary-findings and proceeding pages, pending claim-by-claim internal evidence mapping."
       },
-      "last_verified_at": "2026-11-19",
+      "last_verified_at": "2026-11-20",
       "stage": {
         "zh": "初步认定",
         "en": "Preliminary findings"
@@ -194,7 +194,7 @@
         "zh": "罚款决定、广告库页面与研究者访问材料；整改证据持续收集中。",
         "en": "Fine decision, ad-repository materials and researcher-access evidence; remediation proof remains open."
       },
-      "last_verified_at": "2026-11-19",
+      "last_verified_at": "2026-11-20",
       "stage": {
         "zh": "不合规决定 / 罚款",
         "en": "Non-compliance decision / fine"
@@ -341,7 +341,7 @@
         "zh": "透明度与研究者访问初步认定，未成年人工作流另行跟踪。",
         "en": "Preliminary findings on transparency and researcher access; minor-safety workstream tracked separately."
       },
-      "last_verified_at": "2026-11-19",
+      "last_verified_at": "2026-11-20",
       "stage": {
         "zh": "初步认定",
         "en": "Preliminary findings"
@@ -495,7 +495,7 @@
         "zh": "金融诈骗 RFI 与平台回复核验清单。",
         "en": "Financial-scams RFI and platform-response review checklist."
       },
-      "last_verified_at": "2026-11-19",
+      "last_verified_at": "2026-11-20",
       "stage": {
         "zh": "信息请求（RFI）",
         "en": "Request for information (RFI)"
@@ -613,7 +613,7 @@
         "zh": "行动计划接受页面与季度广告库、研究者访问整改证据。",
         "en": "Accepted action-plan page plus quarterly ad-repository and researcher-access remediation evidence."
       },
-      "last_verified_at": "2026-11-19",
+      "last_verified_at": "2026-11-20",
       "stage": {
         "zh": "承诺 / 整改跟踪",
         "en": "Commitment / remediation follow-up"
@@ -735,7 +735,7 @@
         "zh": "成员国 DSC 指定与授权程序页面，并链接 CURIA 案件台账。",
         "en": "Member State DSC designation material linked to the CURIA docket."
       },
-      "last_verified_at": "2026-11-19",
+      "last_verified_at": "2026-11-20",
       "stage": {
         "zh": "司法阶段 / 案件监测",
         "en": "Judicial phase / docket monitoring"
@@ -821,6 +821,583 @@
             "en": "Court of Justice of the EU"
           },
           "url": "https://curia.europa.eu/jcms/jcms/j_6/en/"
+        }
+      ]
+    },
+    {
+      "id": "ec-aliexpress-2024",
+      "case_id": "ec-aliexpress-2024",
+      "title": {
+        "zh": "AliExpress：非法、危险及仿冒商品风险",
+        "en": "AliExpress: illegal, unsafe & counterfeit product risks"
+      },
+      "entity": {
+        "zh": "AliExpress",
+        "en": "AliExpress"
+      },
+      "platforms": [
+        "AliExpress"
+      ],
+      "authority": {
+        "zh": "欧盟委员会（EC）",
+        "en": "European Commission (EC)"
+      },
+      "country": {
+        "zh": "爱尔兰",
+        "en": "Ireland"
+      },
+      "designation": "VLOP",
+      "articles": [
+        "Art. 16",
+        "Art. 20",
+        "Art. 30",
+        "Art. 34–35",
+        "Art. 39–40"
+      ],
+      "category": "decision",
+      "case_type": "decision_and_remedy",
+      "first_date": "2024-03-14",
+      "latest_date": "2026-07-20",
+      "risk_level": "high",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-fines-aliexpress-eu550-million-breaching-digital-services-act",
+      "source_type": [
+        "EC formal proceeding",
+        "EC binding commitments",
+        "EC non-compliance decision"
+      ],
+      "evidence_snapshot": {
+        "zh": "正式程序、2025 年绑定承诺与 2026 年罚款决定，整改执行证据持续跟踪。",
+        "en": "Formal proceedings, binding commitments in 2025 and the 2026 fine decision; remediation evidence remains under review."
+      },
+      "last_verified_at": "2026-11-20",
+      "stage": {
+        "zh": "不合规决定 / 承诺整改",
+        "en": "Non-compliance decision / remediation"
+      },
+      "fine": 550,
+      "openedDate": "2024-03-14",
+      "openedLabel": {
+        "zh": "启动正式程序",
+        "en": "Formal proceedings opened"
+      },
+      "latestDate": "2026-07-20",
+      "deadline": {
+        "zh": "执行罚款决定并持续提交承诺实施证据",
+        "en": "Implement the decision and continue commitment evidence reporting"
+      },
+      "status": {
+        "zh": "罚款决定已作出；承诺与整改执行中",
+        "en": "Fine decision issued; commitments and remediation in progress"
+      },
+      "summary": {
+        "zh": "欧委会先后评估 AliExpress 的风险治理、内容举报、广告与推荐透明度、商家可追溯性及研究者访问，最终就非法、危险或仿冒商品风险作出 5.5 亿欧元罚款决定。",
+        "en": "The Commission assessed AliExpress on risk governance, notice and action, ad and recommender transparency, trader traceability and researcher access before issuing a €550 million decision on illegal, unsafe and counterfeit-product risks."
+      },
+      "businessImpact": {
+        "zh": "影响商家核验、非法商品下架、广告库、推荐系统、研究者 API 与监测受托人报告。",
+        "en": "Impacts seller verification, illegal-product controls, the ad repository, recommender systems, researcher APIs and monitoring-trustee reporting."
+      },
+      "owner": {
+        "zh": "Marketplace Compliance（EU）",
+        "en": "Marketplace Compliance (EU)"
+      },
+      "nextAction": {
+        "zh": "按承诺清单核验非法商品、商家追溯与研究者访问证据",
+        "en": "Verify illegal-product, trader-traceability and researcher-access evidence against the commitment list"
+      },
+      "keyPoints": [
+        {
+          "zh": "2024 年 3 月启动正式程序，覆盖多个 DSA 义务组。",
+          "en": "Formal proceedings opened in March 2024 across several DSA obligation groups."
+        },
+        {
+          "zh": "2025 年 6 月承诺被欧委会作出绑定，承诺实施期为五年。",
+          "en": "Commitments became binding in June 2025 with a five-year implementation period."
+        },
+        {
+          "zh": "2026 年 7 月因非法、危险或仿冒商品风险被罚款 €5.5 亿。",
+          "en": "A €550 million fine was issued in July 2026 over illegal, unsafe and counterfeit-product risks."
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-07-20",
+          "label": {
+            "zh": "作出 €5.5 亿罚款决定",
+            "en": "€550m fine issued"
+          },
+          "description": {
+            "zh": "欧委会认定 AliExpress 未充分评估和降低非法、危险及仿冒商品传播风险。",
+            "en": "The Commission found that AliExpress failed to diligently assess and mitigate risks from illegal, unsafe and counterfeit products."
+          },
+          "kind": "decision"
+        },
+        {
+          "date": "2025-06-18",
+          "label": {
+            "zh": "承诺被作出绑定",
+            "en": "Commitments made binding"
+          },
+          "description": {
+            "zh": "承诺覆盖隐藏链接、举报机制、广告与推荐透明度、商家追溯和研究者数据访问。",
+            "en": "Commitments covered hidden links, notice and action, ad and recommender transparency, trader traceability and researcher access."
+          },
+          "kind": "remedy"
+        },
+        {
+          "date": "2024-03-14",
+          "label": {
+            "zh": "启动正式程序",
+            "en": "Formal proceedings opened"
+          },
+          "description": {
+            "zh": "欧委会围绕风险治理、内容审核、投诉机制、广告、推荐、商家追溯与数据访问启动程序。",
+            "en": "The Commission opened proceedings into risk governance, content moderation, complaints, ads, recommender systems, trader traceability and data access."
+          },
+          "kind": "proceeding"
+        }
+      ],
+      "sources": [
+        {
+          "label": {
+            "zh": "欧委会：AliExpress 罚款 €5.5 亿",
+            "en": "EC: €550m fine for AliExpress"
+          },
+          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-fines-aliexpress-eu550-million-breaching-digital-services-act"
+        },
+        {
+          "label": {
+            "zh": "欧委会：AliExpress 绑定承诺",
+            "en": "EC: binding AliExpress commitments"
+          },
+          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-makes-aliexpress-commitments-under-digital-services-act-binding"
+        },
+        {
+          "label": {
+            "zh": "欧委会：AliExpress 正式程序",
+            "en": "EC: AliExpress formal proceedings"
+          },
+          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-opens-formal-proceedings-against-aliexpress-under-digital-services-act"
+        }
+      ]
+    },
+    {
+      "id": "ec-temu-2024",
+      "case_id": "ec-temu-2024",
+      "title": {
+        "zh": "Temu：非法商品、推荐系统与系统性风险",
+        "en": "Temu: illegal products, recommender systems & systemic risk"
+      },
+      "entity": {
+        "zh": "Temu",
+        "en": "Temu"
+      },
+      "platforms": [
+        "Temu"
+      ],
+      "authority": {
+        "zh": "欧盟委员会（EC）",
+        "en": "European Commission (EC)"
+      },
+      "country": {
+        "zh": "爱尔兰",
+        "en": "Ireland"
+      },
+      "designation": "VLOP",
+      "articles": [
+        "Art. 27",
+        "Art. 28",
+        "Art. 34–35",
+        "Art. 40",
+        "Art. 75"
+      ],
+      "category": "decision",
+      "case_type": "decision_and_remedy",
+      "first_date": "2024-10-31",
+      "latest_date": "2026-10-26",
+      "risk_level": "high",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-accepts-temus-action-plan-remedy-breach-digital-services-act",
+      "source_type": [
+        "EC formal proceeding",
+        "EC non-compliance decision",
+        "EC action-plan follow-up"
+      ],
+      "evidence_snapshot": {
+        "zh": "正式程序、2026 年 5 月罚款决定及 10 月行动计划页面；风险评估与整改证据待持续核验。",
+        "en": "Formal proceedings, the May 2026 fine decision and October action-plan page; risk-assessment and remediation evidence remain under review."
+      },
+      "last_verified_at": "2026-11-20",
+      "stage": {
+        "zh": "不合规决定 / 行动计划",
+        "en": "Non-compliance decision / action plan"
+      },
+      "fine": 200,
+      "openedDate": "2024-10-31",
+      "openedLabel": {
+        "zh": "启动正式程序",
+        "en": "Formal proceedings opened"
+      },
+      "latestDate": "2026-10-26",
+      "deadline": {
+        "zh": "2026 年 11 月 30 日前完成覆盖六个月期间的临时风险评估",
+        "en": "Complete the interim six-month risk assessment by 30 November 2026"
+      },
+      "status": {
+        "zh": "罚款决定已作出；行动计划实施中",
+        "en": "Fine decision issued; action plan implementation ongoing"
+      },
+      "summary": {
+        "zh": "欧委会围绕 Temu 的非法商品、上瘾式设计、推荐系统和研究者数据访问启动程序，并因风险评估不足作出 2 亿欧元罚款决定。",
+        "en": "The Commission opened proceedings into illegal products, addictive design, recommender systems and researcher access, then issued a €200 million fine for inadequate risk assessment."
+      },
+      "businessImpact": {
+        "zh": "影响商品合规、推荐系统参数披露、非画像推荐选项、研究者访问及临时风险评估。",
+        "en": "Impacts product compliance, recommender-parameter disclosure, non-profiling options, researcher access and interim risk assessment."
+      },
+      "owner": {
+        "zh": "Marketplace Safety（EU）",
+        "en": "Marketplace Safety (EU)"
+      },
+      "nextAction": {
+        "zh": "核验行动计划五项措施和 11 月临时风险评估证据",
+        "en": "Verify the five action-plan measures and evidence for the November interim risk assessment"
+      },
+      "keyPoints": [
+        {
+          "zh": "正式程序覆盖非法商品、上瘾式设计、推荐系统和研究者数据访问。",
+          "en": "Formal proceedings cover illegal products, addictive design, recommender systems and researcher access."
+        },
+        {
+          "zh": "2026 年 5 月因未充分评估非法商品系统性风险被罚款 €2 亿。",
+          "en": "A €200 million fine was issued in May 2026 for inadequate assessment of systemic risks from illegal products."
+        },
+        {
+          "zh": "2026 年 10 月行动计划聚焦平台风险分析、指标、内容审核与推荐系统放大风险。",
+          "en": "The October 2026 action plan focuses on platform-specific analysis, metrics, content moderation and recommender amplification risks."
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-10-26",
+          "label": {
+            "zh": "接受 Temu 行动计划",
+            "en": "Temu action plan accepted"
+          },
+          "description": {
+            "zh": "行动计划包含五项措施，并要求在 2026 年 11 月 30 日前完成临时风险评估。",
+            "en": "The five-measure plan requires an interim risk assessment by 30 November 2026."
+          },
+          "kind": "remedy"
+        },
+        {
+          "date": "2026-05-28",
+          "label": {
+            "zh": "作出 €2 亿罚款决定",
+            "en": "€200m fine issued"
+          },
+          "description": {
+            "zh": "欧委会认定 Temu 未充分识别、分析和评估非法商品传播的系统性风险。",
+            "en": "The Commission found that Temu failed to diligently identify, analyse and assess systemic risks from illegal products."
+          },
+          "kind": "decision"
+        },
+        {
+          "date": "2024-10-31",
+          "label": {
+            "zh": "启动正式程序",
+            "en": "Formal proceedings opened"
+          },
+          "description": {
+            "zh": "程序覆盖非法商品、上瘾式设计、推荐系统和研究者公开数据访问。",
+            "en": "Proceedings covered illegal products, addictive design, recommender systems and researcher access to public data."
+          },
+          "kind": "proceeding"
+        }
+      ],
+      "sources": [
+        {
+          "label": {
+            "zh": "欧委会：接受 Temu 行动计划",
+            "en": "EC: Temu action plan accepted"
+          },
+          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-accepts-temus-action-plan-remedy-breach-digital-services-act"
+        },
+        {
+          "label": {
+            "zh": "欧委会：Temu €2 亿罚款决定",
+            "en": "EC: €200m Temu fine decision"
+          },
+          "url": "https://ec.europa.eu/commission/presscorner/api/files/document/print/en/ip_26_1178/IP_26_1178_EN.pdf"
+        },
+        {
+          "label": {
+            "zh": "欧委会：Temu 正式程序",
+            "en": "EC: Temu formal proceedings"
+          },
+          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-opens-formal-proceedings-against-temu-under-digital-services-act"
+        }
+      ]
+    },
+    {
+      "id": "ec-bookingcom-2026",
+      "case_id": "ec-bookingcom-2026",
+      "title": {
+        "zh": "Booking.com：诈骗房源、钓鱼与广告标识",
+        "en": "Booking.com: fraudulent listings, phishing & ad labelling"
+      },
+      "entity": {
+        "zh": "Booking.com B.V.",
+        "en": "Booking.com B.V."
+      },
+      "platforms": [
+        "Booking.com"
+      ],
+      "authority": {
+        "zh": "欧盟委员会（EC）",
+        "en": "European Commission (EC)"
+      },
+      "country": {
+        "zh": "荷兰",
+        "en": "Netherlands"
+      },
+      "designation": "VLOP",
+      "articles": [
+        "Art. 30",
+        "Art. 34–35",
+        "Art. 39"
+      ],
+      "category": "proceeding",
+      "case_type": "formal_proceeding",
+      "first_date": "2026-10-21",
+      "latest_date": "2026-10-21",
+      "risk_level": "high",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-investigate-how-bookingcom-combats-scams-and-fraud-under-digital-services-act",
+      "source_type": [
+        "EC formal proceeding",
+        "EC VLOP supervision"
+      ],
+      "evidence_snapshot": {
+        "zh": "欧委会正式程序页面，重点核验诈骗房源、预订钓鱼及付费排序的广告标识。",
+        "en": "Commission formal-proceedings page focused on fraudulent listings, reservation phishing and ad labelling for paid ranking."
+      },
+      "last_verified_at": "2026-11-20",
+      "stage": {
+        "zh": "正式程序",
+        "en": "Formal proceedings"
+      },
+      "fine": null,
+      "openedDate": "2026-10-21",
+      "openedLabel": {
+        "zh": "启动正式程序",
+        "en": "Formal proceedings opened"
+      },
+      "latestDate": "2026-10-21",
+      "deadline": {
+        "zh": "等待 Booking.com 提交调查所需资料",
+        "en": "Await Booking.com material requested for the investigation"
+      },
+      "status": {
+        "zh": "正式程序已启动",
+        "en": "Formal proceedings opened"
+      },
+      "summary": {
+        "zh": "欧委会调查 Booking.com 是否充分评估和降低诈骗房源、预订钓鱼及付费提升排序但未清晰标注广告的风险。",
+        "en": "The Commission is investigating whether Booking.com assessed and mitigated fraudulent listings and reservation phishing, and clearly labelled paid boosted listings as ads."
+      },
+      "businessImpact": {
+        "zh": "影响房源审核、客户与预订数据防钓鱼、商家追溯、搜索排序和广告标识。",
+        "en": "Impacts listing review, anti-phishing controls for guest and reservation data, trader traceability, ranking and ad labelling."
+      },
+      "owner": {
+        "zh": "Marketplace Integrity（EU）",
+        "en": "Marketplace Integrity (EU)"
+      },
+      "nextAction": {
+        "zh": "建立诈骗房源、钓鱼和付费排序三条证据链",
+        "en": "Build evidence tracks for fraudulent listings, phishing and paid ranking"
+      },
+      "keyPoints": [
+        {
+          "zh": "调查聚焦诈骗和不合规房源、利用预订与客人数据的钓鱼以及付费提升排序。",
+          "en": "The investigation focuses on fraudulent listings, phishing using reservation and guest data, and paid boosted ranking."
+        },
+        {
+          "zh": "案件与 2025 年跨平台金融诈骗 RFI 相关但保留独立 Booking.com 案件 ID。",
+          "en": "The matter is related to the 2025 cross-platform financial-scams RFI but keeps a distinct Booking.com case ID."
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-10-21",
+          "label": {
+            "zh": "启动诈骗与广告透明度正式程序",
+            "en": "Formal proceedings opened on scams and ad transparency"
+          },
+          "description": {
+            "zh": "欧委会公布调查范围，覆盖诈骗房源、钓鱼和付费提升排序的广告标识。",
+            "en": "The Commission published a scope covering fraudulent listings, phishing and ad labelling for paid boosted ranking."
+          },
+          "kind": "proceeding"
+        },
+        {
+          "date": "2026-10-21",
+          "label": {
+            "zh": "建立调查证据清单",
+            "en": "Investigation evidence scope logged"
+          },
+          "description": {
+            "zh": "将房源合规、预订数据安全与广告库证据绑定至同一案件记录。",
+            "en": "Listing compliance, reservation-data security and ad-repository evidence were linked to the canonical case record."
+          },
+          "kind": "review"
+        }
+      ],
+      "sources": [
+        {
+          "label": {
+            "zh": "欧委会：调查 Booking.com 诈骗与欺诈",
+            "en": "EC: Booking.com scams and fraud investigation"
+          },
+          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-investigate-how-bookingcom-combats-scams-and-fraud-under-digital-services-act"
+        },
+        {
+          "label": {
+            "zh": "欧委会：金融诈骗 RFI",
+            "en": "EC: financial-scams RFI"
+          },
+          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-requests-information-under-digital-services-act-apple-bookingcom-google-and-microsoft-financial-scams"
+        }
+      ]
+    },
+    {
+      "id": "ec-meta-addictive-design-2026",
+      "case_id": "ec-meta-addictive-design-2026",
+      "title": {
+        "zh": "Meta：Instagram 与 Facebook 上瘾式设计",
+        "en": "Meta: addictive design on Instagram and Facebook"
+      },
+      "entity": {
+        "zh": "Meta Platforms Ireland Ltd.",
+        "en": "Meta Platforms Ireland Ltd."
+      },
+      "platforms": [
+        "Facebook",
+        "Instagram"
+      ],
+      "authority": {
+        "zh": "欧盟委员会（EC）",
+        "en": "European Commission (EC)"
+      },
+      "country": {
+        "zh": "爱尔兰",
+        "en": "Ireland"
+      },
+      "designation": "VLOP",
+      "articles": [
+        "Art. 25",
+        "Art. 28",
+        "Art. 34–35"
+      ],
+      "category": "proceeding",
+      "case_type": "preliminary_findings",
+      "first_date": "2026-07-10",
+      "latest_date": "2026-07-10",
+      "risk_level": "high",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-addictive-design-instagram-and-facebook-breach-digital-services-act",
+      "source_type": [
+        "EC preliminary findings",
+        "EC VLOP supervision"
+      ],
+      "evidence_snapshot": {
+        "zh": "欧委会关于无限滚动、自动播放、推送通知和个性化推荐系统的初步认定页面。",
+        "en": "Commission preliminary-findings page on infinite scroll, autoplay, push notifications and personalised recommender systems."
+      },
+      "last_verified_at": "2026-11-20",
+      "stage": {
+        "zh": "初步认定",
+        "en": "Preliminary findings"
+      },
+      "fine": null,
+      "openedDate": "2026-07-10",
+      "openedLabel": {
+        "zh": "发出上瘾式设计初步认定",
+        "en": "Preliminary findings on addictive design issued"
+      },
+      "latestDate": "2026-07-10",
+      "deadline": {
+        "zh": "等待 Meta 对系统性风险和缓解措施作出回应",
+        "en": "Await Meta response on systemic risks and mitigation measures"
+      },
+      "status": {
+        "zh": "初步认定已发出；程序继续",
+        "en": "Preliminary findings issued; proceedings continue"
+      },
+      "summary": {
+        "zh": "欧委会初步认定 Meta 没有充分评估 Instagram 和 Facebook 上瘾式设计对用户、未成年人和易受影响成人身心健康的风险。",
+        "en": "The Commission preliminarily found that Meta did not adequately assess risks from addictive design on Instagram and Facebook to users, minors and vulnerable adults."
+      },
+      "businessImpact": {
+        "zh": "影响产品设计评估、未成年人保护、推荐系统治理、推送通知和健康风险缓解证据。",
+        "en": "Impacts product-design assessments, minor protection, recommender governance, push notifications and health-risk mitigation evidence."
+      },
+      "owner": {
+        "zh": "Product Safety & T&S（EU）",
+        "en": "Product Safety & T&S (EU)"
+      },
+      "nextAction": {
+        "zh": "将无限滚动、自动播放和推荐系统控制映射至风险评估证据",
+        "en": "Map infinite-scroll, autoplay and recommender controls to risk-assessment evidence"
+      },
+      "keyPoints": [
+        {
+          "zh": "调查聚焦无限滚动、自动播放、推送通知和高度个性化推荐系统。",
+          "en": "The investigation focuses on infinite scroll, autoplay, push notifications and highly personalised recommenders."
+        },
+        {
+          "zh": "欧委会认为现有缓解措施未能有效处理身心健康风险。",
+          "en": "The Commission indicated that existing mitigation measures did not effectively address physical and mental health risks."
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-07-10",
+          "label": {
+            "zh": "发出上瘾式设计初步认定",
+            "en": "Preliminary findings on addictive design issued"
+          },
+          "description": {
+            "zh": "欧委会将 Meta 的产品设计与用户、未成年人及易受影响成人健康风险联系起来。",
+            "en": "The Commission linked Meta’s product design to health risks for users, minors and vulnerable adults."
+          },
+          "kind": "finding"
+        },
+        {
+          "date": "2026-07-10",
+          "label": {
+            "zh": "锁定推荐系统与交互功能",
+            "en": "Recommender and engagement features scoped"
+          },
+          "description": {
+            "zh": "调查范围包括无限滚动、自动播放、推送通知和个性化推荐。",
+            "en": "The scope includes infinite scroll, autoplay, push notifications and personalised recommendations."
+          },
+          "kind": "review"
+        }
+      ],
+      "sources": [
+        {
+          "label": {
+            "zh": "欧委会：Meta 上瘾式设计初步认定",
+            "en": "EC: Meta addictive-design preliminary findings"
+          },
+          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-addictive-design-instagram-and-facebook-breach-digital-services-act"
+        },
+        {
+          "label": {
+            "zh": "DSA 执法框架",
+            "en": "DSA enforcement framework"
+          },
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/dsa-enforcement"
         }
       ]
     }
@@ -1021,6 +1598,146 @@
       "kind": "proceeding",
       "event_id": "ec-dsc-referral-2025-2024-07-02-2",
       "case_id": "ec-dsc-referral-2025"
+    },
+    {
+      "date": "2026-07-20",
+      "label": {
+        "zh": "作出 €5.5 亿罚款决定",
+        "en": "€550m fine issued"
+      },
+      "description": {
+        "zh": "欧委会认定 AliExpress 未充分评估和降低非法、危险及仿冒商品传播风险。",
+        "en": "The Commission found that AliExpress failed to diligently assess and mitigate risks from illegal, unsafe and counterfeit products."
+      },
+      "kind": "decision",
+      "event_id": "ec-aliexpress-2024-2026-07-20-1",
+      "case_id": "ec-aliexpress-2024"
+    },
+    {
+      "date": "2025-06-18",
+      "label": {
+        "zh": "承诺被作出绑定",
+        "en": "Commitments made binding"
+      },
+      "description": {
+        "zh": "承诺覆盖隐藏链接、举报机制、广告与推荐透明度、商家追溯和研究者数据访问。",
+        "en": "Commitments covered hidden links, notice and action, ad and recommender transparency, trader traceability and researcher access."
+      },
+      "kind": "remedy",
+      "event_id": "ec-aliexpress-2024-2025-06-18-2",
+      "case_id": "ec-aliexpress-2024"
+    },
+    {
+      "date": "2024-03-14",
+      "label": {
+        "zh": "启动正式程序",
+        "en": "Formal proceedings opened"
+      },
+      "description": {
+        "zh": "欧委会围绕风险治理、内容审核、投诉机制、广告、推荐、商家追溯与数据访问启动程序。",
+        "en": "The Commission opened proceedings into risk governance, content moderation, complaints, ads, recommender systems, trader traceability and data access."
+      },
+      "kind": "proceeding",
+      "event_id": "ec-aliexpress-2024-2024-03-14-3",
+      "case_id": "ec-aliexpress-2024"
+    },
+    {
+      "date": "2026-10-26",
+      "label": {
+        "zh": "接受 Temu 行动计划",
+        "en": "Temu action plan accepted"
+      },
+      "description": {
+        "zh": "行动计划包含五项措施，并要求在 2026 年 11 月 30 日前完成临时风险评估。",
+        "en": "The five-measure plan requires an interim risk assessment by 30 November 2026."
+      },
+      "kind": "remedy",
+      "event_id": "ec-temu-2024-2026-10-26-1",
+      "case_id": "ec-temu-2024"
+    },
+    {
+      "date": "2026-05-28",
+      "label": {
+        "zh": "作出 €2 亿罚款决定",
+        "en": "€200m fine issued"
+      },
+      "description": {
+        "zh": "欧委会认定 Temu 未充分识别、分析和评估非法商品传播的系统性风险。",
+        "en": "The Commission found that Temu failed to diligently identify, analyse and assess systemic risks from illegal products."
+      },
+      "kind": "decision",
+      "event_id": "ec-temu-2024-2026-05-28-2",
+      "case_id": "ec-temu-2024"
+    },
+    {
+      "date": "2024-10-31",
+      "label": {
+        "zh": "启动正式程序",
+        "en": "Formal proceedings opened"
+      },
+      "description": {
+        "zh": "程序覆盖非法商品、上瘾式设计、推荐系统和研究者公开数据访问。",
+        "en": "Proceedings covered illegal products, addictive design, recommender systems and researcher access to public data."
+      },
+      "kind": "proceeding",
+      "event_id": "ec-temu-2024-2024-10-31-3",
+      "case_id": "ec-temu-2024"
+    },
+    {
+      "date": "2026-10-21",
+      "label": {
+        "zh": "启动诈骗与广告透明度正式程序",
+        "en": "Formal proceedings opened on scams and ad transparency"
+      },
+      "description": {
+        "zh": "欧委会公布调查范围，覆盖诈骗房源、钓鱼和付费提升排序的广告标识。",
+        "en": "The Commission published a scope covering fraudulent listings, phishing and ad labelling for paid boosted ranking."
+      },
+      "kind": "proceeding",
+      "event_id": "ec-bookingcom-2026-2026-10-21-1",
+      "case_id": "ec-bookingcom-2026"
+    },
+    {
+      "date": "2026-10-21",
+      "label": {
+        "zh": "建立调查证据清单",
+        "en": "Investigation evidence scope logged"
+      },
+      "description": {
+        "zh": "将房源合规、预订数据安全与广告库证据绑定至同一案件记录。",
+        "en": "Listing compliance, reservation-data security and ad-repository evidence were linked to the canonical case record."
+      },
+      "kind": "review",
+      "event_id": "ec-bookingcom-2026-2026-10-21-2",
+      "case_id": "ec-bookingcom-2026"
+    },
+    {
+      "date": "2026-07-10",
+      "label": {
+        "zh": "发出上瘾式设计初步认定",
+        "en": "Preliminary findings on addictive design issued"
+      },
+      "description": {
+        "zh": "欧委会将 Meta 的产品设计与用户、未成年人及易受影响成人健康风险联系起来。",
+        "en": "The Commission linked Meta’s product design to health risks for users, minors and vulnerable adults."
+      },
+      "kind": "finding",
+      "event_id": "ec-meta-addictive-design-2026-2026-07-10-1",
+      "case_id": "ec-meta-addictive-design-2026"
+    },
+    {
+      "date": "2026-07-10",
+      "label": {
+        "zh": "锁定推荐系统与交互功能",
+        "en": "Recommender and engagement features scoped"
+      },
+      "description": {
+        "zh": "调查范围包括无限滚动、自动播放、推送通知和个性化推荐。",
+        "en": "The scope includes infinite scroll, autoplay, push notifications and personalised recommendations."
+      },
+      "kind": "review",
+      "event_id": "ec-meta-addictive-design-2026-2026-07-10-2",
+      "case_id": "ec-meta-addictive-design-2026"
     }
   ],
   "legal_basis": [
@@ -1193,6 +1910,166 @@
         "en": "DSA obligations related to Art. 49–50"
       },
       "source_url": "https://digital-strategy.ec.europa.eu/en/policies/dsa-dscs"
+    },
+    {
+      "legal_basis_id": "ec-aliexpress-2024-art-16",
+      "case_id": "ec-aliexpress-2024",
+      "article": "Art. 16",
+      "obligation": {
+        "zh": "Art. 16 相关义务",
+        "en": "DSA obligations related to Art. 16"
+      },
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-fines-aliexpress-eu550-million-breaching-digital-services-act"
+    },
+    {
+      "legal_basis_id": "ec-aliexpress-2024-art-20",
+      "case_id": "ec-aliexpress-2024",
+      "article": "Art. 20",
+      "obligation": {
+        "zh": "Art. 20 相关义务",
+        "en": "DSA obligations related to Art. 20"
+      },
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-fines-aliexpress-eu550-million-breaching-digital-services-act"
+    },
+    {
+      "legal_basis_id": "ec-aliexpress-2024-art-30",
+      "case_id": "ec-aliexpress-2024",
+      "article": "Art. 30",
+      "obligation": {
+        "zh": "Art. 30 相关义务",
+        "en": "DSA obligations related to Art. 30"
+      },
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-fines-aliexpress-eu550-million-breaching-digital-services-act"
+    },
+    {
+      "legal_basis_id": "ec-aliexpress-2024-art-34-35",
+      "case_id": "ec-aliexpress-2024",
+      "article": "Art. 34–35",
+      "obligation": {
+        "zh": "Art. 34–35 相关义务",
+        "en": "DSA obligations related to Art. 34–35"
+      },
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-fines-aliexpress-eu550-million-breaching-digital-services-act"
+    },
+    {
+      "legal_basis_id": "ec-aliexpress-2024-art-39-40",
+      "case_id": "ec-aliexpress-2024",
+      "article": "Art. 39–40",
+      "obligation": {
+        "zh": "Art. 39–40 相关义务",
+        "en": "DSA obligations related to Art. 39–40"
+      },
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-fines-aliexpress-eu550-million-breaching-digital-services-act"
+    },
+    {
+      "legal_basis_id": "ec-temu-2024-art-27",
+      "case_id": "ec-temu-2024",
+      "article": "Art. 27",
+      "obligation": {
+        "zh": "Art. 27 相关义务",
+        "en": "DSA obligations related to Art. 27"
+      },
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-accepts-temus-action-plan-remedy-breach-digital-services-act"
+    },
+    {
+      "legal_basis_id": "ec-temu-2024-art-28",
+      "case_id": "ec-temu-2024",
+      "article": "Art. 28",
+      "obligation": {
+        "zh": "Art. 28 相关义务",
+        "en": "DSA obligations related to Art. 28"
+      },
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-accepts-temus-action-plan-remedy-breach-digital-services-act"
+    },
+    {
+      "legal_basis_id": "ec-temu-2024-art-34-35",
+      "case_id": "ec-temu-2024",
+      "article": "Art. 34–35",
+      "obligation": {
+        "zh": "Art. 34–35 相关义务",
+        "en": "DSA obligations related to Art. 34–35"
+      },
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-accepts-temus-action-plan-remedy-breach-digital-services-act"
+    },
+    {
+      "legal_basis_id": "ec-temu-2024-art-40",
+      "case_id": "ec-temu-2024",
+      "article": "Art. 40",
+      "obligation": {
+        "zh": "Art. 40 相关义务",
+        "en": "DSA obligations related to Art. 40"
+      },
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-accepts-temus-action-plan-remedy-breach-digital-services-act"
+    },
+    {
+      "legal_basis_id": "ec-temu-2024-art-75",
+      "case_id": "ec-temu-2024",
+      "article": "Art. 75",
+      "obligation": {
+        "zh": "Art. 75 相关义务",
+        "en": "DSA obligations related to Art. 75"
+      },
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-accepts-temus-action-plan-remedy-breach-digital-services-act"
+    },
+    {
+      "legal_basis_id": "ec-bookingcom-2026-art-30",
+      "case_id": "ec-bookingcom-2026",
+      "article": "Art. 30",
+      "obligation": {
+        "zh": "Art. 30 相关义务",
+        "en": "DSA obligations related to Art. 30"
+      },
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-investigate-how-bookingcom-combats-scams-and-fraud-under-digital-services-act"
+    },
+    {
+      "legal_basis_id": "ec-bookingcom-2026-art-34-35",
+      "case_id": "ec-bookingcom-2026",
+      "article": "Art. 34–35",
+      "obligation": {
+        "zh": "Art. 34–35 相关义务",
+        "en": "DSA obligations related to Art. 34–35"
+      },
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-investigate-how-bookingcom-combats-scams-and-fraud-under-digital-services-act"
+    },
+    {
+      "legal_basis_id": "ec-bookingcom-2026-art-39",
+      "case_id": "ec-bookingcom-2026",
+      "article": "Art. 39",
+      "obligation": {
+        "zh": "Art. 39 相关义务",
+        "en": "DSA obligations related to Art. 39"
+      },
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-investigate-how-bookingcom-combats-scams-and-fraud-under-digital-services-act"
+    },
+    {
+      "legal_basis_id": "ec-meta-addictive-design-2026-art-25",
+      "case_id": "ec-meta-addictive-design-2026",
+      "article": "Art. 25",
+      "obligation": {
+        "zh": "Art. 25 相关义务",
+        "en": "DSA obligations related to Art. 25"
+      },
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-addictive-design-instagram-and-facebook-breach-digital-services-act"
+    },
+    {
+      "legal_basis_id": "ec-meta-addictive-design-2026-art-28",
+      "case_id": "ec-meta-addictive-design-2026",
+      "article": "Art. 28",
+      "obligation": {
+        "zh": "Art. 28 相关义务",
+        "en": "DSA obligations related to Art. 28"
+      },
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-addictive-design-instagram-and-facebook-breach-digital-services-act"
+    },
+    {
+      "legal_basis_id": "ec-meta-addictive-design-2026-art-34-35",
+      "case_id": "ec-meta-addictive-design-2026",
+      "article": "Art. 34–35",
+      "obligation": {
+        "zh": "Art. 34–35 相关义务",
+        "en": "DSA obligations related to Art. 34–35"
+      },
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-addictive-design-instagram-and-facebook-breach-digital-services-act"
     }
   ],
   "entities": [
@@ -1212,7 +2089,8 @@
       },
       "designation": "VLOP",
       "case_ids": [
-        "ec-meta-2024"
+        "ec-meta-2024",
+        "ec-meta-addictive-design-2026"
       ]
     },
     {
@@ -1291,6 +2169,60 @@
       "case_ids": [
         "ec-dsc-referral-2025"
       ]
+    },
+    {
+      "entity_id": "entity-aliexpress",
+      "name": {
+        "zh": "AliExpress",
+        "en": "AliExpress"
+      },
+      "platforms": [
+        "AliExpress"
+      ],
+      "country": {
+        "zh": "爱尔兰",
+        "en": "Ireland"
+      },
+      "designation": "VLOP",
+      "case_ids": [
+        "ec-aliexpress-2024"
+      ]
+    },
+    {
+      "entity_id": "entity-temu",
+      "name": {
+        "zh": "Temu",
+        "en": "Temu"
+      },
+      "platforms": [
+        "Temu"
+      ],
+      "country": {
+        "zh": "爱尔兰",
+        "en": "Ireland"
+      },
+      "designation": "VLOP",
+      "case_ids": [
+        "ec-temu-2024"
+      ]
+    },
+    {
+      "entity_id": "entity-booking-com-b-v",
+      "name": {
+        "zh": "Booking.com B.V.",
+        "en": "Booking.com B.V."
+      },
+      "platforms": [
+        "Booking.com"
+      ],
+      "country": {
+        "zh": "荷兰",
+        "en": "Netherlands"
+      },
+      "designation": "VLOP",
+      "case_ids": [
+        "ec-bookingcom-2026"
+      ]
     }
   ],
   "regulators": [
@@ -1353,6 +2285,40 @@
         "zh": "收集季度整改证据",
         "en": "Collect quarterly remediation evidence"
       }
+    },
+    {
+      "remedy_id": "ec-aliexpress-2024-remedy",
+      "case_id": "ec-aliexpress-2024",
+      "measure_type": "remediation",
+      "description": {
+        "zh": "欧委会先后评估 AliExpress 的风险治理、内容举报、广告与推荐透明度、商家可追溯性及研究者访问，最终就非法、危险或仿冒商品风险作出 5.5 亿欧元罚款决定。",
+        "en": "The Commission assessed AliExpress on risk governance, notice and action, ad and recommender transparency, trader traceability and researcher access before issuing a €550 million decision on illegal, unsafe and counterfeit-product risks."
+      },
+      "status": {
+        "zh": "罚款决定已作出；承诺与整改执行中",
+        "en": "Fine decision issued; commitments and remediation in progress"
+      },
+      "deadline": {
+        "zh": "执行罚款决定并持续提交承诺实施证据",
+        "en": "Implement the decision and continue commitment evidence reporting"
+      }
+    },
+    {
+      "remedy_id": "ec-temu-2024-remedy",
+      "case_id": "ec-temu-2024",
+      "measure_type": "remediation",
+      "description": {
+        "zh": "欧委会围绕 Temu 的非法商品、上瘾式设计、推荐系统和研究者数据访问启动程序，并因风险评估不足作出 2 亿欧元罚款决定。",
+        "en": "The Commission opened proceedings into illegal products, addictive design, recommender systems and researcher access, then issued a €200 million fine for inadequate risk assessment."
+      },
+      "status": {
+        "zh": "罚款决定已作出；行动计划实施中",
+        "en": "Fine decision issued; action plan implementation ongoing"
+      },
+      "deadline": {
+        "zh": "2026 年 11 月 30 日前完成覆盖六个月期间的临时风险评估",
+        "en": "Complete the interim six-month risk assessment by 30 November 2026"
+      }
     }
   ],
   "fines": [
@@ -1364,6 +2330,26 @@
       "status": {
         "zh": "决定已作出；整改承诺后续跟踪",
         "en": "Decision issued; commitment follow-up active"
+      }
+    },
+    {
+      "fine_id": "ec-aliexpress-2024-fine",
+      "case_id": "ec-aliexpress-2024",
+      "amount_eur_millions": 550,
+      "decision_date": "2026-07-20",
+      "status": {
+        "zh": "罚款决定已作出；承诺与整改执行中",
+        "en": "Fine decision issued; commitments and remediation in progress"
+      }
+    },
+    {
+      "fine_id": "ec-temu-2024-fine",
+      "case_id": "ec-temu-2024",
+      "amount_eur_millions": 200,
+      "decision_date": "2026-10-26",
+      "status": {
+        "zh": "罚款决定已作出；行动计划实施中",
+        "en": "Fine decision issued; action plan implementation ongoing"
       }
     }
   ],
@@ -1511,6 +2497,102 @@
         "zh": "已进入司法阶段；持续监测",
         "en": "Judicial phase; monitoring continues"
       }
+    },
+    {
+      "action_id": "ec-aliexpress-2024-next-action",
+      "case_id": "ec-aliexpress-2024",
+      "owner": {
+        "zh": "Marketplace Compliance（EU）",
+        "en": "Marketplace Compliance (EU)"
+      },
+      "next_action": {
+        "zh": "按承诺清单核验非法商品、商家追溯与研究者访问证据",
+        "en": "Verify illegal-product, trader-traceability and researcher-access evidence against the commitment list"
+      },
+      "deadline": {
+        "zh": "执行罚款决定并持续提交承诺实施证据",
+        "en": "Implement the decision and continue commitment evidence reporting"
+      },
+      "evidence_snapshot": {
+        "zh": "正式程序、2025 年绑定承诺与 2026 年罚款决定，整改执行证据持续跟踪。",
+        "en": "Formal proceedings, binding commitments in 2025 and the 2026 fine decision; remediation evidence remains under review."
+      },
+      "status": {
+        "zh": "罚款决定已作出；承诺与整改执行中",
+        "en": "Fine decision issued; commitments and remediation in progress"
+      }
+    },
+    {
+      "action_id": "ec-temu-2024-next-action",
+      "case_id": "ec-temu-2024",
+      "owner": {
+        "zh": "Marketplace Safety（EU）",
+        "en": "Marketplace Safety (EU)"
+      },
+      "next_action": {
+        "zh": "核验行动计划五项措施和 11 月临时风险评估证据",
+        "en": "Verify the five action-plan measures and evidence for the November interim risk assessment"
+      },
+      "deadline": {
+        "zh": "2026 年 11 月 30 日前完成覆盖六个月期间的临时风险评估",
+        "en": "Complete the interim six-month risk assessment by 30 November 2026"
+      },
+      "evidence_snapshot": {
+        "zh": "正式程序、2026 年 5 月罚款决定及 10 月行动计划页面；风险评估与整改证据待持续核验。",
+        "en": "Formal proceedings, the May 2026 fine decision and October action-plan page; risk-assessment and remediation evidence remain under review."
+      },
+      "status": {
+        "zh": "罚款决定已作出；行动计划实施中",
+        "en": "Fine decision issued; action plan implementation ongoing"
+      }
+    },
+    {
+      "action_id": "ec-bookingcom-2026-next-action",
+      "case_id": "ec-bookingcom-2026",
+      "owner": {
+        "zh": "Marketplace Integrity（EU）",
+        "en": "Marketplace Integrity (EU)"
+      },
+      "next_action": {
+        "zh": "建立诈骗房源、钓鱼和付费排序三条证据链",
+        "en": "Build evidence tracks for fraudulent listings, phishing and paid ranking"
+      },
+      "deadline": {
+        "zh": "等待 Booking.com 提交调查所需资料",
+        "en": "Await Booking.com material requested for the investigation"
+      },
+      "evidence_snapshot": {
+        "zh": "欧委会正式程序页面，重点核验诈骗房源、预订钓鱼及付费排序的广告标识。",
+        "en": "Commission formal-proceedings page focused on fraudulent listings, reservation phishing and ad labelling for paid ranking."
+      },
+      "status": {
+        "zh": "正式程序已启动",
+        "en": "Formal proceedings opened"
+      }
+    },
+    {
+      "action_id": "ec-meta-addictive-design-2026-next-action",
+      "case_id": "ec-meta-addictive-design-2026",
+      "owner": {
+        "zh": "Product Safety & T&S（EU）",
+        "en": "Product Safety & T&S (EU)"
+      },
+      "next_action": {
+        "zh": "将无限滚动、自动播放和推荐系统控制映射至风险评估证据",
+        "en": "Map infinite-scroll, autoplay and recommender controls to risk-assessment evidence"
+      },
+      "deadline": {
+        "zh": "等待 Meta 对系统性风险和缓解措施作出回应",
+        "en": "Await Meta response on systemic risks and mitigation measures"
+      },
+      "evidence_snapshot": {
+        "zh": "欧委会关于无限滚动、自动播放、推送通知和个性化推荐系统的初步认定页面。",
+        "en": "Commission preliminary-findings page on infinite scroll, autoplay, push notifications and personalised recommender systems."
+      },
+      "status": {
+        "zh": "初步认定已发出；程序继续",
+        "en": "Preliminary findings issued; proceedings continue"
+      }
     }
   ],
   "sources": [
@@ -1523,7 +2605,7 @@
       },
       "url": "https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-tiktok-and-meta-breach-their-transparency-obligations-under-digital",
       "source_type": "EC press release",
-      "last_verified_at": "2026-11-19"
+      "last_verified_at": "2026-11-20"
     },
     {
       "source_id": "ec-meta-2024-source-2",
@@ -1534,7 +2616,7 @@
       },
       "url": "https://digital-strategy.ec.europa.eu/en/policies/dsa-enforcement",
       "source_type": "EC press release",
-      "last_verified_at": "2026-11-19"
+      "last_verified_at": "2026-11-20"
     },
     {
       "source_id": "ec-x-2023-source-1",
@@ -1545,7 +2627,7 @@
       },
       "url": "https://digital-strategy.ec.europa.eu/en/news/commission-fines-x-eu120-million-under-digital-services-act",
       "source_type": "EC decision press release",
-      "last_verified_at": "2026-11-19"
+      "last_verified_at": "2026-11-20"
     },
     {
       "source_id": "ec-x-2023-source-2",
@@ -1556,7 +2638,7 @@
       },
       "url": "https://digital-strategy.ec.europa.eu/en/news/commission-accepts-xs-action-plan-comply-digital-services-act",
       "source_type": "EC decision press release",
-      "last_verified_at": "2026-11-19"
+      "last_verified_at": "2026-11-20"
     },
     {
       "source_id": "ec-tiktok-2025-source-1",
@@ -1567,7 +2649,7 @@
       },
       "url": "https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-tiktok-and-meta-breach-their-transparency-obligations-under-digital",
       "source_type": "EC formal proceeding",
-      "last_verified_at": "2026-11-19"
+      "last_verified_at": "2026-11-20"
     },
     {
       "source_id": "ec-tiktok-2025-source-2",
@@ -1578,7 +2660,7 @@
       },
       "url": "https://digital-strategy.ec.europa.eu/en/news/commission-preliminary-finds-tiktok-breach-digital-services-act-failing-ensure-safe-accounts-minors",
       "source_type": "EC formal proceeding",
-      "last_verified_at": "2026-11-19"
+      "last_verified_at": "2026-11-20"
     },
     {
       "source_id": "ec-tiktok-2025-source-3",
@@ -1589,7 +2671,7 @@
       },
       "url": "https://digital-strategy.ec.europa.eu/en/policies/list-designated-vlops-and-vloses",
       "source_type": "EC formal proceeding",
-      "last_verified_at": "2026-11-19"
+      "last_verified_at": "2026-11-20"
     },
     {
       "source_id": "ec-financial-scams-2025-source-1",
@@ -1600,7 +2682,7 @@
       },
       "url": "https://digital-strategy.ec.europa.eu/en/news/commission-requests-information-under-digital-services-act-apple-bookingcom-google-and-microsoft-financial-scams",
       "source_type": "EC request for information",
-      "last_verified_at": "2026-11-19"
+      "last_verified_at": "2026-11-20"
     },
     {
       "source_id": "ec-financial-scams-2025-source-2",
@@ -1611,7 +2693,7 @@
       },
       "url": "https://digital-strategy.ec.europa.eu/en/policies/dsa-enforcement",
       "source_type": "EC request for information",
-      "last_verified_at": "2026-11-19"
+      "last_verified_at": "2026-11-20"
     },
     {
       "source_id": "ec-x-commitment-2026-source-1",
@@ -1622,7 +2704,7 @@
       },
       "url": "https://digital-strategy.ec.europa.eu/en/news/commission-accepts-xs-action-plan-comply-digital-services-act",
       "source_type": "EC commitment follow-up",
-      "last_verified_at": "2026-11-19"
+      "last_verified_at": "2026-11-20"
     },
     {
       "source_id": "ec-dsc-referral-2025-source-1",
@@ -1633,7 +2715,7 @@
       },
       "url": "https://digital-strategy.ec.europa.eu/en/policies/dsa-dscs",
       "source_type": "EC infringement notice",
-      "last_verified_at": "2026-11-19"
+      "last_verified_at": "2026-11-20"
     },
     {
       "source_id": "ec-dsc-referral-2025-source-2",
@@ -1644,15 +2726,125 @@
       },
       "url": "https://curia.europa.eu/jcms/jcms/j_6/en/",
       "source_type": "EC infringement notice",
-      "last_verified_at": "2026-11-19"
+      "last_verified_at": "2026-11-20"
+    },
+    {
+      "source_id": "ec-aliexpress-2024-source-1",
+      "case_id": "ec-aliexpress-2024",
+      "label": {
+        "zh": "欧委会：AliExpress 罚款 €5.5 亿",
+        "en": "EC: €550m fine for AliExpress"
+      },
+      "url": "https://digital-strategy.ec.europa.eu/en/news/commission-fines-aliexpress-eu550-million-breaching-digital-services-act",
+      "source_type": "EC formal proceeding",
+      "last_verified_at": "2026-11-20"
+    },
+    {
+      "source_id": "ec-aliexpress-2024-source-2",
+      "case_id": "ec-aliexpress-2024",
+      "label": {
+        "zh": "欧委会：AliExpress 绑定承诺",
+        "en": "EC: binding AliExpress commitments"
+      },
+      "url": "https://digital-strategy.ec.europa.eu/en/news/commission-makes-aliexpress-commitments-under-digital-services-act-binding",
+      "source_type": "EC formal proceeding",
+      "last_verified_at": "2026-11-20"
+    },
+    {
+      "source_id": "ec-aliexpress-2024-source-3",
+      "case_id": "ec-aliexpress-2024",
+      "label": {
+        "zh": "欧委会：AliExpress 正式程序",
+        "en": "EC: AliExpress formal proceedings"
+      },
+      "url": "https://digital-strategy.ec.europa.eu/en/news/commission-opens-formal-proceedings-against-aliexpress-under-digital-services-act",
+      "source_type": "EC formal proceeding",
+      "last_verified_at": "2026-11-20"
+    },
+    {
+      "source_id": "ec-temu-2024-source-1",
+      "case_id": "ec-temu-2024",
+      "label": {
+        "zh": "欧委会：接受 Temu 行动计划",
+        "en": "EC: Temu action plan accepted"
+      },
+      "url": "https://digital-strategy.ec.europa.eu/en/news/commission-accepts-temus-action-plan-remedy-breach-digital-services-act",
+      "source_type": "EC formal proceeding",
+      "last_verified_at": "2026-11-20"
+    },
+    {
+      "source_id": "ec-temu-2024-source-2",
+      "case_id": "ec-temu-2024",
+      "label": {
+        "zh": "欧委会：Temu €2 亿罚款决定",
+        "en": "EC: €200m Temu fine decision"
+      },
+      "url": "https://ec.europa.eu/commission/presscorner/api/files/document/print/en/ip_26_1178/IP_26_1178_EN.pdf",
+      "source_type": "EC formal proceeding",
+      "last_verified_at": "2026-11-20"
+    },
+    {
+      "source_id": "ec-temu-2024-source-3",
+      "case_id": "ec-temu-2024",
+      "label": {
+        "zh": "欧委会：Temu 正式程序",
+        "en": "EC: Temu formal proceedings"
+      },
+      "url": "https://digital-strategy.ec.europa.eu/en/news/commission-opens-formal-proceedings-against-temu-under-digital-services-act",
+      "source_type": "EC formal proceeding",
+      "last_verified_at": "2026-11-20"
+    },
+    {
+      "source_id": "ec-bookingcom-2026-source-1",
+      "case_id": "ec-bookingcom-2026",
+      "label": {
+        "zh": "欧委会：调查 Booking.com 诈骗与欺诈",
+        "en": "EC: Booking.com scams and fraud investigation"
+      },
+      "url": "https://digital-strategy.ec.europa.eu/en/news/commission-investigate-how-bookingcom-combats-scams-and-fraud-under-digital-services-act",
+      "source_type": "EC formal proceeding",
+      "last_verified_at": "2026-11-20"
+    },
+    {
+      "source_id": "ec-bookingcom-2026-source-2",
+      "case_id": "ec-bookingcom-2026",
+      "label": {
+        "zh": "欧委会：金融诈骗 RFI",
+        "en": "EC: financial-scams RFI"
+      },
+      "url": "https://digital-strategy.ec.europa.eu/en/news/commission-requests-information-under-digital-services-act-apple-bookingcom-google-and-microsoft-financial-scams",
+      "source_type": "EC formal proceeding",
+      "last_verified_at": "2026-11-20"
+    },
+    {
+      "source_id": "ec-meta-addictive-design-2026-source-1",
+      "case_id": "ec-meta-addictive-design-2026",
+      "label": {
+        "zh": "欧委会：Meta 上瘾式设计初步认定",
+        "en": "EC: Meta addictive-design preliminary findings"
+      },
+      "url": "https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-addictive-design-instagram-and-facebook-breach-digital-services-act",
+      "source_type": "EC preliminary findings",
+      "last_verified_at": "2026-11-20"
+    },
+    {
+      "source_id": "ec-meta-addictive-design-2026-source-2",
+      "case_id": "ec-meta-addictive-design-2026",
+      "label": {
+        "zh": "DSA 执法框架",
+        "en": "DSA enforcement framework"
+      },
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/dsa-enforcement",
+      "source_type": "EC preliminary findings",
+      "last_verified_at": "2026-11-20"
     }
   ],
   "review_logs": [
     {
-      "review_id": "ec-meta-2024-review-2026-11-19",
+      "review_id": "ec-meta-2024-review-2026-11-20",
       "case_id": "ec-meta-2024",
       "reviewer": "Curated seed",
-      "reviewed_at": "2026-11-19",
+      "reviewed_at": "2026-11-20",
       "decision": {
         "zh": "已核验登记",
         "en": "Curated and verified"
@@ -1663,10 +2855,10 @@
       }
     },
     {
-      "review_id": "ec-x-2023-review-2026-11-19",
+      "review_id": "ec-x-2023-review-2026-11-20",
       "case_id": "ec-x-2023",
       "reviewer": "Curated seed",
-      "reviewed_at": "2026-11-19",
+      "reviewed_at": "2026-11-20",
       "decision": {
         "zh": "已核验登记",
         "en": "Curated and verified"
@@ -1677,10 +2869,10 @@
       }
     },
     {
-      "review_id": "ec-tiktok-2025-review-2026-11-19",
+      "review_id": "ec-tiktok-2025-review-2026-11-20",
       "case_id": "ec-tiktok-2025",
       "reviewer": "Curated seed",
-      "reviewed_at": "2026-11-19",
+      "reviewed_at": "2026-11-20",
       "decision": {
         "zh": "已核验登记",
         "en": "Curated and verified"
@@ -1691,10 +2883,10 @@
       }
     },
     {
-      "review_id": "ec-financial-scams-2025-review-2026-11-19",
+      "review_id": "ec-financial-scams-2025-review-2026-11-20",
       "case_id": "ec-financial-scams-2025",
       "reviewer": "Curated seed",
-      "reviewed_at": "2026-11-19",
+      "reviewed_at": "2026-11-20",
       "decision": {
         "zh": "已核验登记",
         "en": "Curated and verified"
@@ -1705,10 +2897,10 @@
       }
     },
     {
-      "review_id": "ec-x-commitment-2026-review-2026-11-19",
+      "review_id": "ec-x-commitment-2026-review-2026-11-20",
       "case_id": "ec-x-commitment-2026",
       "reviewer": "Curated seed",
-      "reviewed_at": "2026-11-19",
+      "reviewed_at": "2026-11-20",
       "decision": {
         "zh": "已核验登记",
         "en": "Curated and verified"
@@ -1719,10 +2911,10 @@
       }
     },
     {
-      "review_id": "ec-dsc-referral-2025-review-2026-11-19",
+      "review_id": "ec-dsc-referral-2025-review-2026-11-20",
       "case_id": "ec-dsc-referral-2025",
       "reviewer": "Curated seed",
-      "reviewed_at": "2026-11-19",
+      "reviewed_at": "2026-11-20",
       "decision": {
         "zh": "已核验登记",
         "en": "Curated and verified"
@@ -1730,6 +2922,62 @@
       "evidence_snapshot": {
         "zh": "成员国 DSC 指定与授权程序页面，并链接 CURIA 案件台账。",
         "en": "Member State DSC designation material linked to the CURIA docket."
+      }
+    },
+    {
+      "review_id": "ec-aliexpress-2024-review-2026-11-20",
+      "case_id": "ec-aliexpress-2024",
+      "reviewer": "Curated seed",
+      "reviewed_at": "2026-11-20",
+      "decision": {
+        "zh": "已核验登记",
+        "en": "Curated and verified"
+      },
+      "evidence_snapshot": {
+        "zh": "正式程序、2025 年绑定承诺与 2026 年罚款决定，整改执行证据持续跟踪。",
+        "en": "Formal proceedings, binding commitments in 2025 and the 2026 fine decision; remediation evidence remains under review."
+      }
+    },
+    {
+      "review_id": "ec-temu-2024-review-2026-11-20",
+      "case_id": "ec-temu-2024",
+      "reviewer": "Curated seed",
+      "reviewed_at": "2026-11-20",
+      "decision": {
+        "zh": "已核验登记",
+        "en": "Curated and verified"
+      },
+      "evidence_snapshot": {
+        "zh": "正式程序、2026 年 5 月罚款决定及 10 月行动计划页面；风险评估与整改证据待持续核验。",
+        "en": "Formal proceedings, the May 2026 fine decision and October action-plan page; risk-assessment and remediation evidence remain under review."
+      }
+    },
+    {
+      "review_id": "ec-bookingcom-2026-review-2026-11-20",
+      "case_id": "ec-bookingcom-2026",
+      "reviewer": "Curated seed",
+      "reviewed_at": "2026-11-20",
+      "decision": {
+        "zh": "已核验登记",
+        "en": "Curated and verified"
+      },
+      "evidence_snapshot": {
+        "zh": "欧委会正式程序页面，重点核验诈骗房源、预订钓鱼及付费排序的广告标识。",
+        "en": "Commission formal-proceedings page focused on fraudulent listings, reservation phishing and ad labelling for paid ranking."
+      }
+    },
+    {
+      "review_id": "ec-meta-addictive-design-2026-review-2026-11-20",
+      "case_id": "ec-meta-addictive-design-2026",
+      "reviewer": "Curated seed",
+      "reviewed_at": "2026-11-20",
+      "decision": {
+        "zh": "已核验登记",
+        "en": "Curated and verified"
+      },
+      "evidence_snapshot": {
+        "zh": "欧委会关于无限滚动、自动播放、推送通知和个性化推荐系统的初步认定页面。",
+        "en": "Commission preliminary-findings page on infinite scroll, autoplay, push notifications and personalised recommender systems."
       }
     }
   ],

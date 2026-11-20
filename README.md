@@ -12,13 +12,13 @@
 - VLOP / VLOSE 标识、罚款、owner、next action、deadline 与证据来源
 - 监管日历，以及按当前筛选结果导出 Markdown / JSON / CSV
 
-界面内的案件主数据是人工可核验的静态登记簿；官方动态由 `public/data/updates.json` 提供，并可由 GitHub Actions 每日刷新。动态抓取不会自动改写案件状态，避免新闻噪声直接变成案件事实。
+界面内的案件主数据是人工可核验的静态登记簿；当前登记 10 个 canonical matters，AliExpress、Temu、Booking.com 与 Meta 上瘾式设计均以事件链记录，承诺和整改不会单独重复计数。官方动态由 `public/data/updates.json` 提供，并可由 GitHub Actions 每日刷新。动态抓取不会自动改写案件状态，未审核公告只进入 `review_queue.json`。
 
 ## Data model · 数据对象
 
-当前前端用 TypeScript 数据模型表达以下对象，后续可平移到 SQLite / Postgres：
+当前前端用 TypeScript 数据模型和生成的 `public/data/registry.json` 表达以下对象；静态 GitHub Pages 部署不要求运行时数据库：
 
-`enforcement_cases` · `case_events` · `legal_basis` · `entities/platforms` · `regulators` · `remedies_measures` · `fines` · `compliance_actions` · `sources` · `review_logs` · `monitor_runs`
+`enforcement_cases` · `case_events` · `legal_basis` · `entities` / `platforms` · `regulators` · `remedies_measures` · `fines` · `compliance_actions` · `sources` · `review_logs` · `monitor_runs` · `review_queue`
 
 案件字段覆盖：`case_id`、主体 / 平台、国家 / 主管机关、VLOP/VLOSE、DSA 条款、案件类型、首次日期、最新进展日期、当前状态、潜在 / 实际罚款、核心事实、业务影响、风险等级、owner、next_action、deadline、source_url、source_type、evidence_snapshot、last_verified_at。
 
@@ -33,8 +33,10 @@ npm run dev
 
 ```bash
 npm run build       # TypeScript 检查并生成 dist
-npm test            # 数据派生指标与双语金额格式测试
+npm test            # TypeScript 数据、registry 和目录测试
+npm run data:export # 从人工核验种子生成 public/data/registry.json
 npm run lint        # TypeScript 项目检查
+python scripts/validate_registry.py
 python scripts/check_updates.py
 ```
 
@@ -54,11 +56,18 @@ python scripts/check_updates.py
 
 ```text
 src/data/cases.ts          # 双语案件、主体、规则和官方来源登记簿
+src/data/registry.ts       # normalized registry contract, loader and validator
 src/data/dashboardMetrics.ts
 src/App.tsx                # 页面信息架构、筛选和双语切换
+public/data/registry.json  # 生成的案件/事件/条款/来源 registry
 public/data/updates.json   # 官方动态 feed
-scripts/check_updates.py   # 官方 RSS 监测器
+public/data/review_queue.json # 待人工审核的官方公告
+public/data/monitor_runs.json # 监测成功/失败运行记录
+scripts/check_updates.py   # 官方 RSS 监测、去重和审核队列
+scripts/validate_registry.py # registry 外键与字段校验
 tests/metrics.test.ts      # 数据派生指标测试
+tests/catalogue.test.ts    # 官方案件目录覆盖测试
+tests/test_monitor.py      # Python 监测器测试
 .github/workflows/         # 每日监测工作流
 ```
 
