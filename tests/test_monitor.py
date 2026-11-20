@@ -142,6 +142,42 @@ class MonitorFunctionsTest(unittest.TestCase):
             self.assertEqual(runs["runs"][-1]["status"], "failed")
             self.assertEqual(runs["runs"][-1]["error"], "Malformed RSS")
 
+    def test_main_does_not_rewrite_an_unchanged_feed(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            updates_path = root / "updates.json"
+            queue_path = root / "review_queue.json"
+            runs_path = root / "monitor_runs.json"
+            previous = {
+                "updated_at": "2026-11-19T00:00:00+00:00",
+                "source": monitor.RSS_URL,
+                "items": [self.first],
+            }
+            queue = {
+                "updated_at": "2026-11-19T00:00:00+00:00",
+                "items": [
+                    {
+                        "review_id": "review-accepted",
+                        "item_key": self.first["item_key"],
+                        "title": self.first["title"],
+                        "link": self.first["link"],
+                        "published_at": self.first["date"],
+                        "source_type": self.first["source_type"],
+                        "evidence_snapshot": "Accepted evidence.",
+                        "status": "accepted",
+                        "created_at": "2026-11-19T00:00:00+00:00",
+                    }
+                ],
+            }
+            updates_path.write_text(json.dumps(previous), encoding="utf-8")
+            queue_path.write_text(json.dumps(queue), encoding="utf-8")
+            with patch.object(monitor, "OUTPUT", updates_path), patch.object(monitor, "REVIEW_QUEUE_OUTPUT", queue_path), patch.object(monitor, "MONITOR_RUNS_OUTPUT", runs_path), patch.object(monitor, "fetch_feed", return_value=[self.first]):
+                monitor.main()
+            self.assertEqual(json.loads(updates_path.read_text(encoding="utf-8")), previous)
+            self.assertEqual(json.loads(queue_path.read_text(encoding="utf-8")), queue)
+            runs = json.loads(runs_path.read_text(encoding="utf-8"))
+            self.assertEqual(runs["runs"][-1]["status"], "success")
+
 
 if __name__ == "__main__":
     unittest.main()

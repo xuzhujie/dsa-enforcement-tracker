@@ -2,6 +2,8 @@
 
 一个双语（中文 / English）、官方来源优先的欧盟《数字服务法》（DSA）执法跟踪器。产品结构参考同目录旁的 DMA enforcement tracker：顶部数据摘要、筛选、驾驶舱、案件卡片、时间线、图表、自动动态、主体名单、规则速览和官方来源目录。
 
+Live Pages: <https://xuzhujie.github.io/dsa-enforcement-tracker/> · Repository: <https://github.com/xuzhujie/dsa-enforcement-tracker>
+
 ## What it tracks · 跟踪范围
 
 - European Commission DSA enforcement and news

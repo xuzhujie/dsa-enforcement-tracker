@@ -124,9 +124,9 @@
 - Monitoring runs on schedule and manual dispatch, updates only changed data files, records run metadata and exposes a clear failure signal.
 - Pages deployment consumes the exact build artifact produced by CI-compatible commands.
 
-- [ ] Write a validation test/fixture for the monitor workflow’s no-change and failure paths.
-- [ ] Run all local checks and inspect workflow YAML with a parser/linter available in the environment.
-- [ ] Implement CI, workflow permissions, concurrency, artifact retention, operational docs and a link to the live Pages site.
+- [x] Write a validation test/fixture for the monitor workflow’s no-change and failure paths.
+- [x] Run all local checks and inspect workflow YAML with a parser/linter available in the environment.
+- [x] Implement CI, workflow permissions, concurrency, operational docs and links to the live Pages site.
 - [ ] Push to GitHub, verify CI and Pages runs, verify the live URL and confirm the working tree is clean.
 - [ ] Commit as `ci: harden DSA tracker operations`.
 
