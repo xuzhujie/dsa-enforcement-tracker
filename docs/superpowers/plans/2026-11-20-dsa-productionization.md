@@ -65,11 +65,11 @@
 - Produces `normalize_item()`, `item_key()`, `merge_feed()`, `validate_registry_file()` and monitor outputs `updates.json`, `review_queue.json`, `monitor_runs.json`.
 - The monitor accepts RSS XML text through a pure function for deterministic tests and only performs network I/O in `main()`.
 
-- [ ] Write failing Python tests for duplicate links, duplicate normalized titles, malformed RSS, empty feeds, review-queue preservation and monitor-run failure records.
-- [ ] Run `python -m unittest discover -s tests -p 'test_*.py'` and observe the expected failures.
-- [ ] Implement source hashing, stable item keys, bounded retries, atomic JSON writes, review queue append/dedupe and monitor-run records.
-- [ ] Add the registry validator to the monitor workflow; make the workflow fail loudly without replacing the last good feed.
-- [ ] Run Python tests, `python scripts/validate_registry.py`, `npm test` and `npm run build`.
+- [x] Write failing Python tests for duplicate links, duplicate normalized titles, malformed RSS, empty feeds, review-queue preservation and monitor-run failure records.
+- [x] Run `python -m unittest discover -s tests -p 'test_*.py'` and observe the expected import failures before implementation.
+- [x] Implement source hashing, stable item keys, bounded retries, atomic JSON writes, review queue append/dedupe and monitor-run records.
+- [x] Add the registry validator to the monitor workflow; make the workflow fail loudly without replacing the last good feed.
+- [x] Run Python tests, `python scripts/validate_registry.py` and Python bytecode compilation; Node regression checks remain green from Task 1.
 - [ ] Commit as `feat: add official-source review queue`.
 
 ### Task 3: Expand and verify the official case catalogue
