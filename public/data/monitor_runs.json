@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-22T15:39:22.217844+00:00",
+  "updated_at": "2026-11-23T19:28:21.037786+00:00",
   "runs": [
     {
       "run_id": "run-c64b6c09e86baf3b88ff",
@@ -22,6 +22,14 @@
       "source_type": "EC Press Corner RSS",
       "started_at": "2026-11-22T15:39:21.287922+00:00",
       "finished_at": "2026-11-22T15:39:22.217844+00:00",
+      "items_found": 0,
+      "status": "success"
+    },
+    {
+      "run_id": "run-3253e8d98924bf696bb3",
+      "source_type": "EC Press Corner RSS",
+      "started_at": "2026-11-23T19:28:20.190137+00:00",
+      "finished_at": "2026-11-23T19:28:21.037786+00:00",
       "items_found": 0,
       "status": "success"
     }
